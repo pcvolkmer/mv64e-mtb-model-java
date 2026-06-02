@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.4.2](https://github.com/pcvolkmer/mv64e-mtb-model-java/compare/v0.4.1...v0.4.2) (2026-06-02)
+
+
+### Features
+
+* do not include null values in serialization ([#5](https://github.com/pcvolkmer/mv64e-mtb-model-java/issues/5)) ([8883514](https://github.com/pcvolkmer/mv64e-mtb-model-java/commit/88835146eaa36ae0bb71cc75459057e79c030213))
+
 ## [0.4.1](https://github.com/pcvolkmer/mv64e-mtb-model-java/compare/v0.4.1...v0.4.1) (2026-06-01)
 
 
