@@ -1,23 +1,15 @@
-
-
 package dev.pcvolkmer.mv64e.model;
 
-import java.util.Objects;
-import java.util.Map;
-import java.util.HashMap;
-import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonTypeName;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.Arrays;
+import java.util.Objects;
 import org.jspecify.annotations.Nullable;
-
 
 public class CarePlanBoardTypeCoding {
   public enum CodeEnum {
     INDICATION_BOARD(String.valueOf("indication-board")),
-    
+
     THERAPY_BOARD(String.valueOf("therapy-board"));
 
     private String value;
@@ -48,103 +40,82 @@ public class CarePlanBoardTypeCoding {
   }
 
   public static final String JSON_PROPERTY_CODE = "code";
-  
+
   private CodeEnum code;
 
   public static final String JSON_PROPERTY_DISPLAY = "display";
-  
+
   private @Nullable String display;
 
   public static final String JSON_PROPERTY_SYSTEM = "system";
-  
+
   private @Nullable String system;
 
   public static final String JSON_PROPERTY_VERSION = "version";
-  
+
   private @Nullable String version;
 
-  public CarePlanBoardTypeCoding() { 
-  }
+  public CarePlanBoardTypeCoding() {}
 
   public CarePlanBoardTypeCoding code(CodeEnum code) {
     this.code = code;
     return this;
   }
 
-  
   @JsonProperty(value = JSON_PROPERTY_CODE, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public CodeEnum getCode() {
     return code;
   }
 
-
   @JsonProperty(value = JSON_PROPERTY_CODE, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setCode(CodeEnum code) {
     this.code = code;
   }
-
 
   public CarePlanBoardTypeCoding display(@Nullable String display) {
     this.display = display;
     return this;
   }
 
-  
   @JsonProperty(value = JSON_PROPERTY_DISPLAY, required = false)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public @Nullable String getDisplay() {
     return display;
   }
 
-
   @JsonProperty(value = JSON_PROPERTY_DISPLAY, required = false)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setDisplay(@Nullable String display) {
     this.display = display;
   }
-
 
   public CarePlanBoardTypeCoding system(@Nullable String system) {
     this.system = system;
     return this;
   }
 
-  
   @JsonProperty(value = JSON_PROPERTY_SYSTEM, required = false)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public @Nullable String getSystem() {
     return system;
   }
 
-
   @JsonProperty(value = JSON_PROPERTY_SYSTEM, required = false)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setSystem(@Nullable String system) {
     this.system = system;
   }
-
 
   public CarePlanBoardTypeCoding version(@Nullable String version) {
     this.version = version;
     return this;
   }
 
-  
   @JsonProperty(value = JSON_PROPERTY_VERSION, required = false)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public @Nullable String getVersion() {
     return version;
   }
 
-
   @JsonProperty(value = JSON_PROPERTY_VERSION, required = false)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setVersion(@Nullable String version) {
     this.version = version;
   }
-
 
   @Override
   public boolean equals(Object o) {
@@ -155,10 +126,10 @@ public class CarePlanBoardTypeCoding {
       return false;
     }
     CarePlanBoardTypeCoding carePlanBoardTypeCoding = (CarePlanBoardTypeCoding) o;
-    return Objects.equals(this.code, carePlanBoardTypeCoding.code) &&
-        Objects.equals(this.display, carePlanBoardTypeCoding.display) &&
-        Objects.equals(this.system, carePlanBoardTypeCoding.system) &&
-        Objects.equals(this.version, carePlanBoardTypeCoding.version);
+    return Objects.equals(this.code, carePlanBoardTypeCoding.code)
+        && Objects.equals(this.display, carePlanBoardTypeCoding.display)
+        && Objects.equals(this.system, carePlanBoardTypeCoding.system)
+        && Objects.equals(this.version, carePlanBoardTypeCoding.version);
   }
 
   @Override
@@ -182,7 +153,7 @@ public class CarePlanBoardTypeCoding {
     return o == null ? "null" : o.toString().replace("\n", "\n    ");
   }
 
-    public static class Builder {
+  public static class Builder {
 
     private CarePlanBoardTypeCoding instance;
 
@@ -198,19 +169,21 @@ public class CarePlanBoardTypeCoding {
       this.instance.code = code;
       return this;
     }
+
     public CarePlanBoardTypeCoding.Builder display(String display) {
       this.instance.display = display;
       return this;
     }
+
     public CarePlanBoardTypeCoding.Builder system(String system) {
       this.instance.system = system;
       return this;
     }
+
     public CarePlanBoardTypeCoding.Builder version(String version) {
       this.instance.version = version;
       return this;
     }
-
 
     public CarePlanBoardTypeCoding build() {
       try {
@@ -233,11 +206,9 @@ public class CarePlanBoardTypeCoding {
 
   public CarePlanBoardTypeCoding.Builder toBuilder() {
     return new CarePlanBoardTypeCoding.Builder()
-      .code(getCode())
-      .display(getDisplay())
-      .system(getSystem())
-      .version(getVersion());
+        .code(getCode())
+        .display(getDisplay())
+        .system(getSystem())
+        .version(getVersion());
   }
-
 }
-

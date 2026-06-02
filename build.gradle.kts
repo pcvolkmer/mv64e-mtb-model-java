@@ -41,6 +41,14 @@ tasks.withType<JavaCompile> {
     options.encoding = "UTF-8"
 }
 
+spotless {
+    java {
+        importOrder()
+        removeUnusedImports()
+        googleJavaFormat()
+    }
+}
+
 publishing {
     repositories {
         mavenLocal()

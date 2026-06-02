@@ -1,118 +1,87 @@
-
-
 package dev.pcvolkmer.mv64e.model;
 
-import java.util.Objects;
-import java.util.Map;
-import java.util.HashMap;
-import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonTypeName;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.Arrays;
+import java.util.Objects;
 import org.jspecify.annotations.Nullable;
-
 
 public class Coding {
   public static final String JSON_PROPERTY_CODE = "code";
-  
+
   private String code;
 
   public static final String JSON_PROPERTY_DISPLAY = "display";
-  
+
   private @Nullable String display;
 
   public static final String JSON_PROPERTY_SYSTEM = "system";
-  
+
   private @Nullable String system;
 
   public static final String JSON_PROPERTY_VERSION = "version";
-  
+
   private @Nullable String version;
 
-  public Coding() { 
-  }
+  public Coding() {}
 
   public Coding code(String code) {
     this.code = code;
     return this;
   }
 
-  
   @JsonProperty(value = JSON_PROPERTY_CODE, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public String getCode() {
     return code;
   }
 
-
   @JsonProperty(value = JSON_PROPERTY_CODE, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setCode(String code) {
     this.code = code;
   }
-
 
   public Coding display(@Nullable String display) {
     this.display = display;
     return this;
   }
 
-  
   @JsonProperty(value = JSON_PROPERTY_DISPLAY, required = false)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public @Nullable String getDisplay() {
     return display;
   }
 
-
   @JsonProperty(value = JSON_PROPERTY_DISPLAY, required = false)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setDisplay(@Nullable String display) {
     this.display = display;
   }
-
 
   public Coding system(@Nullable String system) {
     this.system = system;
     return this;
   }
 
-  
   @JsonProperty(value = JSON_PROPERTY_SYSTEM, required = false)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public @Nullable String getSystem() {
     return system;
   }
 
-
   @JsonProperty(value = JSON_PROPERTY_SYSTEM, required = false)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setSystem(@Nullable String system) {
     this.system = system;
   }
-
 
   public Coding version(@Nullable String version) {
     this.version = version;
     return this;
   }
 
-  
   @JsonProperty(value = JSON_PROPERTY_VERSION, required = false)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public @Nullable String getVersion() {
     return version;
   }
 
-
   @JsonProperty(value = JSON_PROPERTY_VERSION, required = false)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setVersion(@Nullable String version) {
     this.version = version;
   }
-
 
   @Override
   public boolean equals(Object o) {
@@ -123,10 +92,10 @@ public class Coding {
       return false;
     }
     Coding coding = (Coding) o;
-    return Objects.equals(this.code, coding.code) &&
-        Objects.equals(this.display, coding.display) &&
-        Objects.equals(this.system, coding.system) &&
-        Objects.equals(this.version, coding.version);
+    return Objects.equals(this.code, coding.code)
+        && Objects.equals(this.display, coding.display)
+        && Objects.equals(this.system, coding.system)
+        && Objects.equals(this.version, coding.version);
   }
 
   @Override
@@ -150,7 +119,7 @@ public class Coding {
     return o == null ? "null" : o.toString().replace("\n", "\n    ");
   }
 
-    public static class Builder {
+  public static class Builder {
 
     private Coding instance;
 
@@ -166,19 +135,21 @@ public class Coding {
       this.instance.code = code;
       return this;
     }
+
     public Coding.Builder display(String display) {
       this.instance.display = display;
       return this;
     }
+
     public Coding.Builder system(String system) {
       this.instance.system = system;
       return this;
     }
+
     public Coding.Builder version(String version) {
       this.instance.version = version;
       return this;
     }
-
 
     public Coding build() {
       try {
@@ -201,11 +172,9 @@ public class Coding {
 
   public Coding.Builder toBuilder() {
     return new Coding.Builder()
-      .code(getCode())
-      .display(getDisplay())
-      .system(getSystem())
-      .version(getVersion());
+        .code(getCode())
+        .display(getDisplay())
+        .system(getSystem())
+        .version(getVersion());
   }
-
 }
-

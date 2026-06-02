@@ -1,121 +1,90 @@
-
-
 package dev.pcvolkmer.mv64e.model;
 
-import java.util.Objects;
-import java.util.Map;
-import java.util.HashMap;
-import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonTypeName;
-import com.fasterxml.jackson.annotation.JsonValue;
-import dev.pcvolkmer.mv64e.model.FollowUpPatientStatusCoding;
-import dev.pcvolkmer.mv64e.model.Reference;
-import java.util.Arrays;
+import com.fasterxml.jackson.annotation.*;
 import java.util.Date;
+import java.util.Objects;
 import org.jspecify.annotations.Nullable;
-
 
 public class FollowUp {
   public static final String JSON_PROPERTY_DATE = "date";
-  
+
   private Date date;
 
   public static final String JSON_PROPERTY_PATIENT = "patient";
-  
+
   private Reference patient;
 
   public static final String JSON_PROPERTY_LAST_CONTACT_DATE = "lastContactDate";
-  
+
   private @Nullable Date lastContactDate;
 
   public static final String JSON_PROPERTY_PATIENT_STATUS = "patientStatus";
-  
+
   private @Nullable FollowUpPatientStatusCoding patientStatus;
 
-  public FollowUp() { 
-  }
+  public FollowUp() {}
 
   public FollowUp date(Date date) {
     this.date = date;
     return this;
   }
 
-  
   @JsonProperty(value = JSON_PROPERTY_DATE, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
   public Date getDate() {
     return date;
   }
 
-
   @JsonProperty(value = JSON_PROPERTY_DATE, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setDate(Date date) {
     this.date = date;
   }
-
 
   public FollowUp patient(Reference patient) {
     this.patient = patient;
     return this;
   }
 
-  
   @JsonProperty(value = JSON_PROPERTY_PATIENT, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public Reference getPatient() {
     return patient;
   }
 
-
   @JsonProperty(value = JSON_PROPERTY_PATIENT, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setPatient(Reference patient) {
     this.patient = patient;
   }
-
 
   public FollowUp lastContactDate(@Nullable Date lastContactDate) {
     this.lastContactDate = lastContactDate;
     return this;
   }
 
-  
   @JsonProperty(value = JSON_PROPERTY_LAST_CONTACT_DATE, required = false)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
   public @Nullable Date getLastContactDate() {
     return lastContactDate;
   }
 
-
   @JsonProperty(value = JSON_PROPERTY_LAST_CONTACT_DATE, required = false)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setLastContactDate(@Nullable Date lastContactDate) {
     this.lastContactDate = lastContactDate;
   }
-
 
   public FollowUp patientStatus(@Nullable FollowUpPatientStatusCoding patientStatus) {
     this.patientStatus = patientStatus;
     return this;
   }
 
-  
   @JsonProperty(value = JSON_PROPERTY_PATIENT_STATUS, required = false)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public @Nullable FollowUpPatientStatusCoding getPatientStatus() {
     return patientStatus;
   }
 
-
   @JsonProperty(value = JSON_PROPERTY_PATIENT_STATUS, required = false)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setPatientStatus(@Nullable FollowUpPatientStatusCoding patientStatus) {
     this.patientStatus = patientStatus;
   }
-
 
   @Override
   public boolean equals(Object o) {
@@ -126,10 +95,10 @@ public class FollowUp {
       return false;
     }
     FollowUp followUp = (FollowUp) o;
-    return Objects.equals(this.date, followUp.date) &&
-        Objects.equals(this.patient, followUp.patient) &&
-        Objects.equals(this.lastContactDate, followUp.lastContactDate) &&
-        Objects.equals(this.patientStatus, followUp.patientStatus);
+    return Objects.equals(this.date, followUp.date)
+        && Objects.equals(this.patient, followUp.patient)
+        && Objects.equals(this.lastContactDate, followUp.lastContactDate)
+        && Objects.equals(this.patientStatus, followUp.patientStatus);
   }
 
   @Override
@@ -153,7 +122,7 @@ public class FollowUp {
     return o == null ? "null" : o.toString().replace("\n", "\n    ");
   }
 
-    public static class Builder {
+  public static class Builder {
 
     private FollowUp instance;
 
@@ -169,19 +138,21 @@ public class FollowUp {
       this.instance.date = date;
       return this;
     }
+
     public FollowUp.Builder patient(Reference patient) {
       this.instance.patient = patient;
       return this;
     }
+
     public FollowUp.Builder lastContactDate(Date lastContactDate) {
       this.instance.lastContactDate = lastContactDate;
       return this;
     }
+
     public FollowUp.Builder patientStatus(FollowUpPatientStatusCoding patientStatus) {
       this.instance.patientStatus = patientStatus;
       return this;
     }
-
 
     public FollowUp build() {
       try {
@@ -204,11 +175,9 @@ public class FollowUp {
 
   public FollowUp.Builder toBuilder() {
     return new FollowUp.Builder()
-      .date(getDate())
-      .patient(getPatient())
-      .lastContactDate(getLastContactDate())
-      .patientStatus(getPatientStatus());
+        .date(getDate())
+        .patient(getPatient())
+        .lastContactDate(getLastContactDate())
+        .patientStatus(getPatientStatus());
   }
-
 }
-

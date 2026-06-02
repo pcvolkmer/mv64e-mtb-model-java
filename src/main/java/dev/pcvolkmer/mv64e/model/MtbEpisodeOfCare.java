@@ -1,102 +1,74 @@
-
-
 package dev.pcvolkmer.mv64e.model;
 
-import java.util.Objects;
-import java.util.Map;
-import java.util.HashMap;
-import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonTypeName;
-import com.fasterxml.jackson.annotation.JsonValue;
-import dev.pcvolkmer.mv64e.model.PeriodDate;
-import dev.pcvolkmer.mv64e.model.Reference;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
+import java.util.Objects;
 import org.jspecify.annotations.Nullable;
-
 
 public class MtbEpisodeOfCare {
   public static final String JSON_PROPERTY_ID = "id";
-  
+
   private String id;
 
   public static final String JSON_PROPERTY_PATIENT = "patient";
-  
+
   private Reference patient;
 
   public static final String JSON_PROPERTY_PERIOD = "period";
-  
+
   private PeriodDate period;
 
   public static final String JSON_PROPERTY_DIAGNOSES = "diagnoses";
-  
+
   private @Nullable List<Reference> diagnoses;
 
-  public MtbEpisodeOfCare() { 
-  }
+  public MtbEpisodeOfCare() {}
 
   public MtbEpisodeOfCare id(String id) {
     this.id = id;
     return this;
   }
 
-  
   @JsonProperty(value = JSON_PROPERTY_ID, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public String getId() {
     return id;
   }
 
-
   @JsonProperty(value = JSON_PROPERTY_ID, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setId(String id) {
     this.id = id;
   }
-
 
   public MtbEpisodeOfCare patient(Reference patient) {
     this.patient = patient;
     return this;
   }
 
-  
   @JsonProperty(value = JSON_PROPERTY_PATIENT, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public Reference getPatient() {
     return patient;
   }
 
-
   @JsonProperty(value = JSON_PROPERTY_PATIENT, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setPatient(Reference patient) {
     this.patient = patient;
   }
-
 
   public MtbEpisodeOfCare period(PeriodDate period) {
     this.period = period;
     return this;
   }
 
-  
   @JsonProperty(value = JSON_PROPERTY_PERIOD, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public PeriodDate getPeriod() {
     return period;
   }
 
-
   @JsonProperty(value = JSON_PROPERTY_PERIOD, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setPeriod(PeriodDate period) {
     this.period = period;
   }
-
 
   public MtbEpisodeOfCare diagnoses(@Nullable List<Reference> diagnoses) {
     this.diagnoses = diagnoses;
@@ -111,20 +83,15 @@ public class MtbEpisodeOfCare {
     return this;
   }
 
-  
   @JsonProperty(value = JSON_PROPERTY_DIAGNOSES, required = false)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public @Nullable List<Reference> getDiagnoses() {
     return diagnoses;
   }
 
-
   @JsonProperty(value = JSON_PROPERTY_DIAGNOSES, required = false)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setDiagnoses(@Nullable List<Reference> diagnoses) {
     this.diagnoses = diagnoses;
   }
-
 
   @Override
   public boolean equals(Object o) {
@@ -135,10 +102,10 @@ public class MtbEpisodeOfCare {
       return false;
     }
     MtbEpisodeOfCare mtbEpisodeOfCare = (MtbEpisodeOfCare) o;
-    return Objects.equals(this.id, mtbEpisodeOfCare.id) &&
-        Objects.equals(this.patient, mtbEpisodeOfCare.patient) &&
-        Objects.equals(this.period, mtbEpisodeOfCare.period) &&
-        Objects.equals(this.diagnoses, mtbEpisodeOfCare.diagnoses);
+    return Objects.equals(this.id, mtbEpisodeOfCare.id)
+        && Objects.equals(this.patient, mtbEpisodeOfCare.patient)
+        && Objects.equals(this.period, mtbEpisodeOfCare.period)
+        && Objects.equals(this.diagnoses, mtbEpisodeOfCare.diagnoses);
   }
 
   @Override
@@ -162,7 +129,7 @@ public class MtbEpisodeOfCare {
     return o == null ? "null" : o.toString().replace("\n", "\n    ");
   }
 
-    public static class Builder {
+  public static class Builder {
 
     private MtbEpisodeOfCare instance;
 
@@ -178,19 +145,21 @@ public class MtbEpisodeOfCare {
       this.instance.id = id;
       return this;
     }
+
     public MtbEpisodeOfCare.Builder patient(Reference patient) {
       this.instance.patient = patient;
       return this;
     }
+
     public MtbEpisodeOfCare.Builder period(PeriodDate period) {
       this.instance.period = period;
       return this;
     }
+
     public MtbEpisodeOfCare.Builder diagnoses(List<Reference> diagnoses) {
       this.instance.diagnoses = diagnoses;
       return this;
     }
-
 
     public MtbEpisodeOfCare build() {
       try {
@@ -213,11 +182,9 @@ public class MtbEpisodeOfCare {
 
   public MtbEpisodeOfCare.Builder toBuilder() {
     return new MtbEpisodeOfCare.Builder()
-      .id(getId())
-      .patient(getPatient())
-      .period(getPeriod())
-      .diagnoses(getDiagnoses());
+        .id(getId())
+        .patient(getPatient())
+        .period(getPeriod())
+        .diagnoses(getDiagnoses());
   }
-
 }
-

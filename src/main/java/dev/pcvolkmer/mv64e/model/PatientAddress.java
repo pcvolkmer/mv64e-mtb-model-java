@@ -1,46 +1,29 @@
-
-
 package dev.pcvolkmer.mv64e.model;
 
-import java.util.Objects;
-import java.util.Map;
-import java.util.HashMap;
-import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonTypeName;
-import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.Arrays;
-import org.jspecify.annotations.Nullable;
-
+import java.util.Objects;
 
 public class PatientAddress {
   public static final String JSON_PROPERTY_MUNICIPALITY_CODE = "municipalityCode";
-  
+
   private String municipalityCode;
 
-  public PatientAddress() { 
-  }
+  public PatientAddress() {}
 
   public PatientAddress municipalityCode(String municipalityCode) {
     this.municipalityCode = municipalityCode;
     return this;
   }
 
-  
   @JsonProperty(value = JSON_PROPERTY_MUNICIPALITY_CODE, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public String getMunicipalityCode() {
     return municipalityCode;
   }
 
-
   @JsonProperty(value = JSON_PROPERTY_MUNICIPALITY_CODE, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setMunicipalityCode(String municipalityCode) {
     this.municipalityCode = municipalityCode;
   }
-
 
   @Override
   public boolean equals(Object o) {
@@ -72,7 +55,7 @@ public class PatientAddress {
     return o == null ? "null" : o.toString().replace("\n", "\n    ");
   }
 
-    public static class Builder {
+  public static class Builder {
 
     private PatientAddress instance;
 
@@ -88,7 +71,6 @@ public class PatientAddress {
       this.instance.municipalityCode = municipalityCode;
       return this;
     }
-
 
     public PatientAddress build() {
       try {
@@ -110,9 +92,6 @@ public class PatientAddress {
   }
 
   public PatientAddress.Builder toBuilder() {
-    return new PatientAddress.Builder()
-      .municipalityCode(getMunicipalityCode());
+    return new PatientAddress.Builder().municipalityCode(getMunicipalityCode());
   }
-
 }
-

@@ -1,145 +1,106 @@
-
-
 package dev.pcvolkmer.mv64e.model;
 
-import java.util.Objects;
-import java.util.Map;
-import java.util.HashMap;
-import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonTypeName;
-import com.fasterxml.jackson.annotation.JsonValue;
-import dev.pcvolkmer.mv64e.model.BrcanessConfidenceRange;
-import dev.pcvolkmer.mv64e.model.Reference;
 import java.math.BigDecimal;
-import java.util.Arrays;
-import org.jspecify.annotations.Nullable;
-
+import java.util.Objects;
 
 public class Brcaness {
   public static final String JSON_PROPERTY_CONFIDENCE_RANGE = "confidenceRange";
-  
+
   private BrcanessConfidenceRange confidenceRange;
 
   public static final String JSON_PROPERTY_ID = "id";
-  
+
   private String id;
 
   public static final String JSON_PROPERTY_SPECIMEN = "specimen";
-  
+
   private Reference specimen;
 
   public static final String JSON_PROPERTY_VALUE = "value";
-  
+
   private BigDecimal value;
 
   public static final String JSON_PROPERTY_PATIENT = "patient";
-  
+
   private Reference patient;
 
-  public Brcaness() { 
-  }
+  public Brcaness() {}
 
   public Brcaness confidenceRange(BrcanessConfidenceRange confidenceRange) {
     this.confidenceRange = confidenceRange;
     return this;
   }
 
-  
   @JsonProperty(value = JSON_PROPERTY_CONFIDENCE_RANGE, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public BrcanessConfidenceRange getConfidenceRange() {
     return confidenceRange;
   }
 
-
   @JsonProperty(value = JSON_PROPERTY_CONFIDENCE_RANGE, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setConfidenceRange(BrcanessConfidenceRange confidenceRange) {
     this.confidenceRange = confidenceRange;
   }
-
 
   public Brcaness id(String id) {
     this.id = id;
     return this;
   }
 
-  
   @JsonProperty(value = JSON_PROPERTY_ID, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public String getId() {
     return id;
   }
 
-
   @JsonProperty(value = JSON_PROPERTY_ID, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setId(String id) {
     this.id = id;
   }
-
 
   public Brcaness specimen(Reference specimen) {
     this.specimen = specimen;
     return this;
   }
 
-  
   @JsonProperty(value = JSON_PROPERTY_SPECIMEN, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public Reference getSpecimen() {
     return specimen;
   }
 
-
   @JsonProperty(value = JSON_PROPERTY_SPECIMEN, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setSpecimen(Reference specimen) {
     this.specimen = specimen;
   }
-
 
   public Brcaness value(BigDecimal value) {
     this.value = value;
     return this;
   }
 
-  
   @JsonProperty(value = JSON_PROPERTY_VALUE, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public BigDecimal getValue() {
     return value;
   }
 
-
   @JsonProperty(value = JSON_PROPERTY_VALUE, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setValue(BigDecimal value) {
     this.value = value;
   }
-
 
   public Brcaness patient(Reference patient) {
     this.patient = patient;
     return this;
   }
 
-  
   @JsonProperty(value = JSON_PROPERTY_PATIENT, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public Reference getPatient() {
     return patient;
   }
 
-
   @JsonProperty(value = JSON_PROPERTY_PATIENT, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setPatient(Reference patient) {
     this.patient = patient;
   }
-
 
   @Override
   public boolean equals(Object o) {
@@ -150,11 +111,11 @@ public class Brcaness {
       return false;
     }
     Brcaness brcaness = (Brcaness) o;
-    return Objects.equals(this.confidenceRange, brcaness.confidenceRange) &&
-        Objects.equals(this.id, brcaness.id) &&
-        Objects.equals(this.specimen, brcaness.specimen) &&
-        Objects.equals(this.value, brcaness.value) &&
-        Objects.equals(this.patient, brcaness.patient);
+    return Objects.equals(this.confidenceRange, brcaness.confidenceRange)
+        && Objects.equals(this.id, brcaness.id)
+        && Objects.equals(this.specimen, brcaness.specimen)
+        && Objects.equals(this.value, brcaness.value)
+        && Objects.equals(this.patient, brcaness.patient);
   }
 
   @Override
@@ -179,7 +140,7 @@ public class Brcaness {
     return o == null ? "null" : o.toString().replace("\n", "\n    ");
   }
 
-    public static class Builder {
+  public static class Builder {
 
     private Brcaness instance;
 
@@ -195,23 +156,26 @@ public class Brcaness {
       this.instance.confidenceRange = confidenceRange;
       return this;
     }
+
     public Brcaness.Builder id(String id) {
       this.instance.id = id;
       return this;
     }
+
     public Brcaness.Builder specimen(Reference specimen) {
       this.instance.specimen = specimen;
       return this;
     }
+
     public Brcaness.Builder value(BigDecimal value) {
       this.instance.value = value;
       return this;
     }
+
     public Brcaness.Builder patient(Reference patient) {
       this.instance.patient = patient;
       return this;
     }
-
 
     public Brcaness build() {
       try {
@@ -234,12 +198,10 @@ public class Brcaness {
 
   public Brcaness.Builder toBuilder() {
     return new Brcaness.Builder()
-      .confidenceRange(getConfidenceRange())
-      .id(getId())
-      .specimen(getSpecimen())
-      .value(getValue())
-      .patient(getPatient());
+        .confidenceRange(getConfidenceRange())
+        .id(getId())
+        .specimen(getSpecimen())
+        .value(getValue())
+        .patient(getPatient());
   }
-
 }
-

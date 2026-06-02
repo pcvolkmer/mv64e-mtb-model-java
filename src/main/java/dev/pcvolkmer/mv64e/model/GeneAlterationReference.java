@@ -1,96 +1,68 @@
-
-
 package dev.pcvolkmer.mv64e.model;
 
-import java.util.Objects;
-import java.util.Map;
-import java.util.HashMap;
-import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonTypeName;
-import com.fasterxml.jackson.annotation.JsonValue;
-import dev.pcvolkmer.mv64e.model.Coding;
-import dev.pcvolkmer.mv64e.model.Reference;
-import java.util.Arrays;
+import java.util.Objects;
 import org.jspecify.annotations.Nullable;
-
 
 public class GeneAlterationReference {
   public static final String JSON_PROPERTY_VARIANT = "variant";
-  
+
   private Reference variant;
 
   public static final String JSON_PROPERTY_DISPLAY = "display";
-  
+
   private @Nullable String display;
 
   public static final String JSON_PROPERTY_GENE = "gene";
-  
+
   private @Nullable Coding gene;
 
-  public GeneAlterationReference() { 
-  }
+  public GeneAlterationReference() {}
 
   public GeneAlterationReference variant(Reference variant) {
     this.variant = variant;
     return this;
   }
 
-  
   @JsonProperty(value = JSON_PROPERTY_VARIANT, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public Reference getVariant() {
     return variant;
   }
 
-
   @JsonProperty(value = JSON_PROPERTY_VARIANT, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setVariant(Reference variant) {
     this.variant = variant;
   }
-
 
   public GeneAlterationReference display(@Nullable String display) {
     this.display = display;
     return this;
   }
 
-  
   @JsonProperty(value = JSON_PROPERTY_DISPLAY, required = false)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public @Nullable String getDisplay() {
     return display;
   }
 
-
   @JsonProperty(value = JSON_PROPERTY_DISPLAY, required = false)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setDisplay(@Nullable String display) {
     this.display = display;
   }
-
 
   public GeneAlterationReference gene(@Nullable Coding gene) {
     this.gene = gene;
     return this;
   }
 
-  
   @JsonProperty(value = JSON_PROPERTY_GENE, required = false)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public @Nullable Coding getGene() {
     return gene;
   }
 
-
   @JsonProperty(value = JSON_PROPERTY_GENE, required = false)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setGene(@Nullable Coding gene) {
     this.gene = gene;
   }
-
 
   @Override
   public boolean equals(Object o) {
@@ -101,9 +73,9 @@ public class GeneAlterationReference {
       return false;
     }
     GeneAlterationReference geneAlterationReference = (GeneAlterationReference) o;
-    return Objects.equals(this.variant, geneAlterationReference.variant) &&
-        Objects.equals(this.display, geneAlterationReference.display) &&
-        Objects.equals(this.gene, geneAlterationReference.gene);
+    return Objects.equals(this.variant, geneAlterationReference.variant)
+        && Objects.equals(this.display, geneAlterationReference.display)
+        && Objects.equals(this.gene, geneAlterationReference.gene);
   }
 
   @Override
@@ -126,7 +98,7 @@ public class GeneAlterationReference {
     return o == null ? "null" : o.toString().replace("\n", "\n    ");
   }
 
-    public static class Builder {
+  public static class Builder {
 
     private GeneAlterationReference instance;
 
@@ -142,15 +114,16 @@ public class GeneAlterationReference {
       this.instance.variant = variant;
       return this;
     }
+
     public GeneAlterationReference.Builder display(String display) {
       this.instance.display = display;
       return this;
     }
+
     public GeneAlterationReference.Builder gene(Coding gene) {
       this.instance.gene = gene;
       return this;
     }
-
 
     public GeneAlterationReference build() {
       try {
@@ -173,10 +146,8 @@ public class GeneAlterationReference {
 
   public GeneAlterationReference.Builder toBuilder() {
     return new GeneAlterationReference.Builder()
-      .variant(getVariant())
-      .display(getDisplay())
-      .gene(getGene());
+        .variant(getVariant())
+        .display(getDisplay())
+        .gene(getGene());
   }
-
 }
-

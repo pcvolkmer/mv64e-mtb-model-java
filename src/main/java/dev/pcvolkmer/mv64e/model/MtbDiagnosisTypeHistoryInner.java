@@ -1,72 +1,50 @@
-
-
 package dev.pcvolkmer.mv64e.model;
 
-import java.util.Objects;
-import java.util.Map;
-import java.util.HashMap;
-import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonTypeName;
-import com.fasterxml.jackson.annotation.JsonValue;
-import dev.pcvolkmer.mv64e.model.MtbDiagnosisTypeCoding;
-import java.util.Arrays;
+import com.fasterxml.jackson.annotation.*;
 import java.util.Date;
-import org.jspecify.annotations.Nullable;
-
+import java.util.Objects;
 
 public class MtbDiagnosisTypeHistoryInner {
   public static final String JSON_PROPERTY_VALUE = "value";
-  
+
   private MtbDiagnosisTypeCoding value;
 
   public static final String JSON_PROPERTY_DATE = "date";
-  
+
   private Date date;
 
-  public MtbDiagnosisTypeHistoryInner() { 
-  }
+  public MtbDiagnosisTypeHistoryInner() {}
 
   public MtbDiagnosisTypeHistoryInner value(MtbDiagnosisTypeCoding value) {
     this.value = value;
     return this;
   }
 
-  
   @JsonProperty(value = JSON_PROPERTY_VALUE, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public MtbDiagnosisTypeCoding getValue() {
     return value;
   }
 
-
   @JsonProperty(value = JSON_PROPERTY_VALUE, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setValue(MtbDiagnosisTypeCoding value) {
     this.value = value;
   }
-
 
   public MtbDiagnosisTypeHistoryInner date(Date date) {
     this.date = date;
     return this;
   }
 
-  
   @JsonProperty(value = JSON_PROPERTY_DATE, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
   public Date getDate() {
     return date;
   }
 
-
   @JsonProperty(value = JSON_PROPERTY_DATE, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setDate(Date date) {
     this.date = date;
   }
-
 
   @Override
   public boolean equals(Object o) {
@@ -77,8 +55,8 @@ public class MtbDiagnosisTypeHistoryInner {
       return false;
     }
     MtbDiagnosisTypeHistoryInner mtbDiagnosisTypeHistoryInner = (MtbDiagnosisTypeHistoryInner) o;
-    return Objects.equals(this.value, mtbDiagnosisTypeHistoryInner.value) &&
-        Objects.equals(this.date, mtbDiagnosisTypeHistoryInner.date);
+    return Objects.equals(this.value, mtbDiagnosisTypeHistoryInner.value)
+        && Objects.equals(this.date, mtbDiagnosisTypeHistoryInner.date);
   }
 
   @Override
@@ -100,7 +78,7 @@ public class MtbDiagnosisTypeHistoryInner {
     return o == null ? "null" : o.toString().replace("\n", "\n    ");
   }
 
-    public static class Builder {
+  public static class Builder {
 
     private MtbDiagnosisTypeHistoryInner instance;
 
@@ -116,11 +94,11 @@ public class MtbDiagnosisTypeHistoryInner {
       this.instance.value = value;
       return this;
     }
+
     public MtbDiagnosisTypeHistoryInner.Builder date(Date date) {
       this.instance.date = date;
       return this;
     }
-
 
     public MtbDiagnosisTypeHistoryInner build() {
       try {
@@ -142,10 +120,6 @@ public class MtbDiagnosisTypeHistoryInner {
   }
 
   public MtbDiagnosisTypeHistoryInner.Builder toBuilder() {
-    return new MtbDiagnosisTypeHistoryInner.Builder()
-      .value(getValue())
-      .date(getDate());
+    return new MtbDiagnosisTypeHistoryInner.Builder().value(getValue()).date(getDate());
   }
-
 }
-

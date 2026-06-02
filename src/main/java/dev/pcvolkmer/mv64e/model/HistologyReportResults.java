@@ -1,72 +1,50 @@
-
-
 package dev.pcvolkmer.mv64e.model;
 
-import java.util.Objects;
-import java.util.Map;
-import java.util.HashMap;
-import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonTypeName;
-import com.fasterxml.jackson.annotation.JsonValue;
-import dev.pcvolkmer.mv64e.model.HistologyReportResultsTumorMorphology;
-import dev.pcvolkmer.mv64e.model.TumorCellContent;
-import java.util.Arrays;
+import java.util.Objects;
 import org.jspecify.annotations.Nullable;
-
 
 public class HistologyReportResults {
   public static final String JSON_PROPERTY_TUMOR_MORPHOLOGY = "tumorMorphology";
-  
+
   private HistologyReportResultsTumorMorphology tumorMorphology;
 
   public static final String JSON_PROPERTY_TUMOR_CELL_CONTENT = "tumorCellContent";
-  
+
   private @Nullable TumorCellContent tumorCellContent;
 
-  public HistologyReportResults() { 
-  }
+  public HistologyReportResults() {}
 
-  public HistologyReportResults tumorMorphology(HistologyReportResultsTumorMorphology tumorMorphology) {
+  public HistologyReportResults tumorMorphology(
+      HistologyReportResultsTumorMorphology tumorMorphology) {
     this.tumorMorphology = tumorMorphology;
     return this;
   }
 
-  
   @JsonProperty(value = JSON_PROPERTY_TUMOR_MORPHOLOGY, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public HistologyReportResultsTumorMorphology getTumorMorphology() {
     return tumorMorphology;
   }
 
-
   @JsonProperty(value = JSON_PROPERTY_TUMOR_MORPHOLOGY, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setTumorMorphology(HistologyReportResultsTumorMorphology tumorMorphology) {
     this.tumorMorphology = tumorMorphology;
   }
-
 
   public HistologyReportResults tumorCellContent(@Nullable TumorCellContent tumorCellContent) {
     this.tumorCellContent = tumorCellContent;
     return this;
   }
 
-  
   @JsonProperty(value = JSON_PROPERTY_TUMOR_CELL_CONTENT, required = false)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public @Nullable TumorCellContent getTumorCellContent() {
     return tumorCellContent;
   }
 
-
   @JsonProperty(value = JSON_PROPERTY_TUMOR_CELL_CONTENT, required = false)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setTumorCellContent(@Nullable TumorCellContent tumorCellContent) {
     this.tumorCellContent = tumorCellContent;
   }
-
 
   @Override
   public boolean equals(Object o) {
@@ -77,8 +55,8 @@ public class HistologyReportResults {
       return false;
     }
     HistologyReportResults histologyReportResults = (HistologyReportResults) o;
-    return Objects.equals(this.tumorMorphology, histologyReportResults.tumorMorphology) &&
-        Objects.equals(this.tumorCellContent, histologyReportResults.tumorCellContent);
+    return Objects.equals(this.tumorMorphology, histologyReportResults.tumorMorphology)
+        && Objects.equals(this.tumorCellContent, histologyReportResults.tumorCellContent);
   }
 
   @Override
@@ -100,7 +78,7 @@ public class HistologyReportResults {
     return o == null ? "null" : o.toString().replace("\n", "\n    ");
   }
 
-    public static class Builder {
+  public static class Builder {
 
     private HistologyReportResults instance;
 
@@ -112,15 +90,16 @@ public class HistologyReportResults {
       this.instance = instance;
     }
 
-    public HistologyReportResults.Builder tumorMorphology(HistologyReportResultsTumorMorphology tumorMorphology) {
+    public HistologyReportResults.Builder tumorMorphology(
+        HistologyReportResultsTumorMorphology tumorMorphology) {
       this.instance.tumorMorphology = tumorMorphology;
       return this;
     }
+
     public HistologyReportResults.Builder tumorCellContent(TumorCellContent tumorCellContent) {
       this.instance.tumorCellContent = tumorCellContent;
       return this;
     }
-
 
     public HistologyReportResults build() {
       try {
@@ -143,9 +122,7 @@ public class HistologyReportResults {
 
   public HistologyReportResults.Builder toBuilder() {
     return new HistologyReportResults.Builder()
-      .tumorMorphology(getTumorMorphology())
-      .tumorCellContent(getTumorCellContent());
+        .tumorMorphology(getTumorMorphology())
+        .tumorCellContent(getTumorCellContent());
   }
-
 }
-

@@ -1,33 +1,25 @@
-
-
 package dev.pcvolkmer.mv64e.model;
 
-import java.util.Objects;
-import java.util.Map;
-import java.util.HashMap;
-import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonTypeName;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.Arrays;
+import java.util.Objects;
 import org.jspecify.annotations.Nullable;
-
 
 public class ProteinExpressionTcScoreCoding {
   public enum CodeEnum {
     _1(String.valueOf("1")),
-    
+
     _6(String.valueOf("6")),
-    
+
     _4(String.valueOf("4")),
-    
+
     _0(String.valueOf("0")),
-    
+
     _3(String.valueOf("3")),
-    
+
     _2(String.valueOf("2")),
-    
+
     _5(String.valueOf("5"));
 
     private String value;
@@ -58,103 +50,82 @@ public class ProteinExpressionTcScoreCoding {
   }
 
   public static final String JSON_PROPERTY_CODE = "code";
-  
+
   private CodeEnum code;
 
   public static final String JSON_PROPERTY_DISPLAY = "display";
-  
+
   private @Nullable String display;
 
   public static final String JSON_PROPERTY_SYSTEM = "system";
-  
+
   private @Nullable String system;
 
   public static final String JSON_PROPERTY_VERSION = "version";
-  
+
   private @Nullable String version;
 
-  public ProteinExpressionTcScoreCoding() { 
-  }
+  public ProteinExpressionTcScoreCoding() {}
 
   public ProteinExpressionTcScoreCoding code(CodeEnum code) {
     this.code = code;
     return this;
   }
 
-  
   @JsonProperty(value = JSON_PROPERTY_CODE, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public CodeEnum getCode() {
     return code;
   }
 
-
   @JsonProperty(value = JSON_PROPERTY_CODE, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setCode(CodeEnum code) {
     this.code = code;
   }
-
 
   public ProteinExpressionTcScoreCoding display(@Nullable String display) {
     this.display = display;
     return this;
   }
 
-  
   @JsonProperty(value = JSON_PROPERTY_DISPLAY, required = false)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public @Nullable String getDisplay() {
     return display;
   }
 
-
   @JsonProperty(value = JSON_PROPERTY_DISPLAY, required = false)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setDisplay(@Nullable String display) {
     this.display = display;
   }
-
 
   public ProteinExpressionTcScoreCoding system(@Nullable String system) {
     this.system = system;
     return this;
   }
 
-  
   @JsonProperty(value = JSON_PROPERTY_SYSTEM, required = false)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public @Nullable String getSystem() {
     return system;
   }
 
-
   @JsonProperty(value = JSON_PROPERTY_SYSTEM, required = false)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setSystem(@Nullable String system) {
     this.system = system;
   }
-
 
   public ProteinExpressionTcScoreCoding version(@Nullable String version) {
     this.version = version;
     return this;
   }
 
-  
   @JsonProperty(value = JSON_PROPERTY_VERSION, required = false)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public @Nullable String getVersion() {
     return version;
   }
 
-
   @JsonProperty(value = JSON_PROPERTY_VERSION, required = false)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setVersion(@Nullable String version) {
     this.version = version;
   }
-
 
   @Override
   public boolean equals(Object o) {
@@ -164,11 +135,12 @@ public class ProteinExpressionTcScoreCoding {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    ProteinExpressionTcScoreCoding proteinExpressionTcScoreCoding = (ProteinExpressionTcScoreCoding) o;
-    return Objects.equals(this.code, proteinExpressionTcScoreCoding.code) &&
-        Objects.equals(this.display, proteinExpressionTcScoreCoding.display) &&
-        Objects.equals(this.system, proteinExpressionTcScoreCoding.system) &&
-        Objects.equals(this.version, proteinExpressionTcScoreCoding.version);
+    ProteinExpressionTcScoreCoding proteinExpressionTcScoreCoding =
+        (ProteinExpressionTcScoreCoding) o;
+    return Objects.equals(this.code, proteinExpressionTcScoreCoding.code)
+        && Objects.equals(this.display, proteinExpressionTcScoreCoding.display)
+        && Objects.equals(this.system, proteinExpressionTcScoreCoding.system)
+        && Objects.equals(this.version, proteinExpressionTcScoreCoding.version);
   }
 
   @Override
@@ -192,7 +164,7 @@ public class ProteinExpressionTcScoreCoding {
     return o == null ? "null" : o.toString().replace("\n", "\n    ");
   }
 
-    public static class Builder {
+  public static class Builder {
 
     private ProteinExpressionTcScoreCoding instance;
 
@@ -208,19 +180,21 @@ public class ProteinExpressionTcScoreCoding {
       this.instance.code = code;
       return this;
     }
+
     public ProteinExpressionTcScoreCoding.Builder display(String display) {
       this.instance.display = display;
       return this;
     }
+
     public ProteinExpressionTcScoreCoding.Builder system(String system) {
       this.instance.system = system;
       return this;
     }
+
     public ProteinExpressionTcScoreCoding.Builder version(String version) {
       this.instance.version = version;
       return this;
     }
-
 
     public ProteinExpressionTcScoreCoding build() {
       try {
@@ -243,11 +217,9 @@ public class ProteinExpressionTcScoreCoding {
 
   public ProteinExpressionTcScoreCoding.Builder toBuilder() {
     return new ProteinExpressionTcScoreCoding.Builder()
-      .code(getCode())
-      .display(getDisplay())
-      .system(getSystem())
-      .version(getVersion());
+        .code(getCode())
+        .display(getDisplay())
+        .system(getSystem())
+        .version(getVersion());
   }
-
 }
-

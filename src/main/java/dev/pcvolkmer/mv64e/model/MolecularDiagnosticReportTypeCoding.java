@@ -1,43 +1,35 @@
-
-
 package dev.pcvolkmer.mv64e.model;
 
-import java.util.Objects;
-import java.util.Map;
-import java.util.HashMap;
-import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonTypeName;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.Arrays;
+import java.util.Objects;
 import org.jspecify.annotations.Nullable;
-
 
 public class MolecularDiagnosticReportTypeCoding {
   public enum CodeEnum {
     FUSION_PANEL(String.valueOf("fusion-panel")),
-    
+
     GENOME_SHORT_READ(String.valueOf("genome-short-read")),
-    
+
     ARRAY(String.valueOf("array")),
-    
+
     FISH(String.valueOf("FISH")),
-    
+
     EXOME(String.valueOf("exome")),
-    
+
     GENE_PANEL(String.valueOf("gene-panel")),
-    
+
     PCR(String.valueOf("PCR")),
-    
+
     KARYOTYPING(String.valueOf("karyotyping")),
-    
+
     PANEL(String.valueOf("panel")),
-    
+
     SINGLE(String.valueOf("single")),
-    
+
     GENOME_LONG_READ(String.valueOf("genome-long-read")),
-    
+
     OTHER(String.valueOf("other"));
 
     private String value;
@@ -68,103 +60,82 @@ public class MolecularDiagnosticReportTypeCoding {
   }
 
   public static final String JSON_PROPERTY_CODE = "code";
-  
+
   private CodeEnum code;
 
   public static final String JSON_PROPERTY_DISPLAY = "display";
-  
+
   private @Nullable String display;
 
   public static final String JSON_PROPERTY_SYSTEM = "system";
-  
+
   private @Nullable String system;
 
   public static final String JSON_PROPERTY_VERSION = "version";
-  
+
   private @Nullable String version;
 
-  public MolecularDiagnosticReportTypeCoding() { 
-  }
+  public MolecularDiagnosticReportTypeCoding() {}
 
   public MolecularDiagnosticReportTypeCoding code(CodeEnum code) {
     this.code = code;
     return this;
   }
 
-  
   @JsonProperty(value = JSON_PROPERTY_CODE, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public CodeEnum getCode() {
     return code;
   }
 
-
   @JsonProperty(value = JSON_PROPERTY_CODE, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setCode(CodeEnum code) {
     this.code = code;
   }
-
 
   public MolecularDiagnosticReportTypeCoding display(@Nullable String display) {
     this.display = display;
     return this;
   }
 
-  
   @JsonProperty(value = JSON_PROPERTY_DISPLAY, required = false)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public @Nullable String getDisplay() {
     return display;
   }
 
-
   @JsonProperty(value = JSON_PROPERTY_DISPLAY, required = false)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setDisplay(@Nullable String display) {
     this.display = display;
   }
-
 
   public MolecularDiagnosticReportTypeCoding system(@Nullable String system) {
     this.system = system;
     return this;
   }
 
-  
   @JsonProperty(value = JSON_PROPERTY_SYSTEM, required = false)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public @Nullable String getSystem() {
     return system;
   }
 
-
   @JsonProperty(value = JSON_PROPERTY_SYSTEM, required = false)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setSystem(@Nullable String system) {
     this.system = system;
   }
-
 
   public MolecularDiagnosticReportTypeCoding version(@Nullable String version) {
     this.version = version;
     return this;
   }
 
-  
   @JsonProperty(value = JSON_PROPERTY_VERSION, required = false)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public @Nullable String getVersion() {
     return version;
   }
 
-
   @JsonProperty(value = JSON_PROPERTY_VERSION, required = false)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setVersion(@Nullable String version) {
     this.version = version;
   }
-
 
   @Override
   public boolean equals(Object o) {
@@ -174,11 +145,12 @@ public class MolecularDiagnosticReportTypeCoding {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    MolecularDiagnosticReportTypeCoding molecularDiagnosticReportTypeCoding = (MolecularDiagnosticReportTypeCoding) o;
-    return Objects.equals(this.code, molecularDiagnosticReportTypeCoding.code) &&
-        Objects.equals(this.display, molecularDiagnosticReportTypeCoding.display) &&
-        Objects.equals(this.system, molecularDiagnosticReportTypeCoding.system) &&
-        Objects.equals(this.version, molecularDiagnosticReportTypeCoding.version);
+    MolecularDiagnosticReportTypeCoding molecularDiagnosticReportTypeCoding =
+        (MolecularDiagnosticReportTypeCoding) o;
+    return Objects.equals(this.code, molecularDiagnosticReportTypeCoding.code)
+        && Objects.equals(this.display, molecularDiagnosticReportTypeCoding.display)
+        && Objects.equals(this.system, molecularDiagnosticReportTypeCoding.system)
+        && Objects.equals(this.version, molecularDiagnosticReportTypeCoding.version);
   }
 
   @Override
@@ -202,7 +174,7 @@ public class MolecularDiagnosticReportTypeCoding {
     return o == null ? "null" : o.toString().replace("\n", "\n    ");
   }
 
-    public static class Builder {
+  public static class Builder {
 
     private MolecularDiagnosticReportTypeCoding instance;
 
@@ -218,19 +190,21 @@ public class MolecularDiagnosticReportTypeCoding {
       this.instance.code = code;
       return this;
     }
+
     public MolecularDiagnosticReportTypeCoding.Builder display(String display) {
       this.instance.display = display;
       return this;
     }
+
     public MolecularDiagnosticReportTypeCoding.Builder system(String system) {
       this.instance.system = system;
       return this;
     }
+
     public MolecularDiagnosticReportTypeCoding.Builder version(String version) {
       this.instance.version = version;
       return this;
     }
-
 
     public MolecularDiagnosticReportTypeCoding build() {
       try {
@@ -253,11 +227,9 @@ public class MolecularDiagnosticReportTypeCoding {
 
   public MolecularDiagnosticReportTypeCoding.Builder toBuilder() {
     return new MolecularDiagnosticReportTypeCoding.Builder()
-      .code(getCode())
-      .display(getDisplay())
-      .system(getSystem())
-      .version(getVersion());
+        .code(getCode())
+        .display(getDisplay())
+        .system(getSystem())
+        .version(getVersion());
   }
-
 }
-

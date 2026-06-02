@@ -1,28 +1,19 @@
-
-
 package dev.pcvolkmer.mv64e.model;
-
-import java.util.Objects;
-import java.util.Map;
-import java.util.HashMap;
-import org.jspecify.annotations.Nullable;
-
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 
 public enum BroadConsentReasonMissing {
-  
   ORGANIZATIONAL_ISSUES("organizational-issues"),
-  
+
   TECHNICAL_ISSUES("technical-issues"),
-  
+
   PATIENT_INABILITY("patient-inability"),
-  
+
   OTHER_PATIENT_REASON("other-patient-reason"),
-  
+
   CONSENT_NOT_RETURNED("consent-not-returned"),
-  
+
   PATIENT_REFUSAL("patient-refusal");
 
   private String value;
@@ -50,6 +41,4 @@ public enum BroadConsentReasonMissing {
     }
     throw new IllegalArgumentException("Unexpected value '" + value + "'");
   }
-
 }
-

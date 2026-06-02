@@ -1,29 +1,16 @@
-
-
 package dev.pcvolkmer.mv64e.model;
 
-import java.util.Objects;
-import java.util.Map;
-import java.util.HashMap;
-import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonTypeName;
-import com.fasterxml.jackson.annotation.JsonValue;
-import dev.pcvolkmer.mv64e.model.TumorGrading;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
-import org.jspecify.annotations.Nullable;
-
+import java.util.Objects;
 
 public class MtbDiagnosisGrading {
   public static final String JSON_PROPERTY_HISTORY = "history";
-  
+
   private List<TumorGrading> history;
 
-  public MtbDiagnosisGrading() { 
-  }
+  public MtbDiagnosisGrading() {}
 
   public MtbDiagnosisGrading history(List<TumorGrading> history) {
     this.history = history;
@@ -38,20 +25,15 @@ public class MtbDiagnosisGrading {
     return this;
   }
 
-  
   @JsonProperty(value = JSON_PROPERTY_HISTORY, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public List<TumorGrading> getHistory() {
     return history;
   }
 
-
   @JsonProperty(value = JSON_PROPERTY_HISTORY, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setHistory(List<TumorGrading> history) {
     this.history = history;
   }
-
 
   @Override
   public boolean equals(Object o) {
@@ -83,7 +65,7 @@ public class MtbDiagnosisGrading {
     return o == null ? "null" : o.toString().replace("\n", "\n    ");
   }
 
-    public static class Builder {
+  public static class Builder {
 
     private MtbDiagnosisGrading instance;
 
@@ -99,7 +81,6 @@ public class MtbDiagnosisGrading {
       this.instance.history = history;
       return this;
     }
-
 
     public MtbDiagnosisGrading build() {
       try {
@@ -121,9 +102,6 @@ public class MtbDiagnosisGrading {
   }
 
   public MtbDiagnosisGrading.Builder toBuilder() {
-    return new MtbDiagnosisGrading.Builder()
-      .history(getHistory());
+    return new MtbDiagnosisGrading.Builder().history(getHistory());
   }
-
 }
-

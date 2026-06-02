@@ -1,145 +1,107 @@
-
-
 package dev.pcvolkmer.mv64e.model;
 
-import java.util.Objects;
-import java.util.Map;
-import java.util.HashMap;
-import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonTypeName;
-import com.fasterxml.jackson.annotation.JsonValue;
-import dev.pcvolkmer.mv64e.model.IhcReportResults;
-import dev.pcvolkmer.mv64e.model.Reference;
-import java.util.Arrays;
+import com.fasterxml.jackson.annotation.*;
 import java.util.Date;
-import org.jspecify.annotations.Nullable;
-
+import java.util.Objects;
 
 public class IhcReport {
   public static final String JSON_PROPERTY_SPECIMEN = "specimen";
-  
+
   private Reference specimen;
 
   public static final String JSON_PROPERTY_ISSUED_ON = "issuedOn";
-  
+
   private Date issuedOn;
 
   public static final String JSON_PROPERTY_PATIENT = "patient";
-  
+
   private Reference patient;
 
   public static final String JSON_PROPERTY_ID = "id";
-  
+
   private String id;
 
   public static final String JSON_PROPERTY_RESULTS = "results";
-  
+
   private IhcReportResults results;
 
-  public IhcReport() { 
-  }
+  public IhcReport() {}
 
   public IhcReport specimen(Reference specimen) {
     this.specimen = specimen;
     return this;
   }
 
-  
   @JsonProperty(value = JSON_PROPERTY_SPECIMEN, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public Reference getSpecimen() {
     return specimen;
   }
 
-
   @JsonProperty(value = JSON_PROPERTY_SPECIMEN, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setSpecimen(Reference specimen) {
     this.specimen = specimen;
   }
-
 
   public IhcReport issuedOn(Date issuedOn) {
     this.issuedOn = issuedOn;
     return this;
   }
 
-  
   @JsonProperty(value = JSON_PROPERTY_ISSUED_ON, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
   public Date getIssuedOn() {
     return issuedOn;
   }
 
-
   @JsonProperty(value = JSON_PROPERTY_ISSUED_ON, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setIssuedOn(Date issuedOn) {
     this.issuedOn = issuedOn;
   }
-
 
   public IhcReport patient(Reference patient) {
     this.patient = patient;
     return this;
   }
 
-  
   @JsonProperty(value = JSON_PROPERTY_PATIENT, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public Reference getPatient() {
     return patient;
   }
 
-
   @JsonProperty(value = JSON_PROPERTY_PATIENT, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setPatient(Reference patient) {
     this.patient = patient;
   }
-
 
   public IhcReport id(String id) {
     this.id = id;
     return this;
   }
 
-  
   @JsonProperty(value = JSON_PROPERTY_ID, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public String getId() {
     return id;
   }
 
-
   @JsonProperty(value = JSON_PROPERTY_ID, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setId(String id) {
     this.id = id;
   }
-
 
   public IhcReport results(IhcReportResults results) {
     this.results = results;
     return this;
   }
 
-  
   @JsonProperty(value = JSON_PROPERTY_RESULTS, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public IhcReportResults getResults() {
     return results;
   }
 
-
   @JsonProperty(value = JSON_PROPERTY_RESULTS, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setResults(IhcReportResults results) {
     this.results = results;
   }
-
 
   @Override
   public boolean equals(Object o) {
@@ -150,11 +112,11 @@ public class IhcReport {
       return false;
     }
     IhcReport ihcReport = (IhcReport) o;
-    return Objects.equals(this.specimen, ihcReport.specimen) &&
-        Objects.equals(this.issuedOn, ihcReport.issuedOn) &&
-        Objects.equals(this.patient, ihcReport.patient) &&
-        Objects.equals(this.id, ihcReport.id) &&
-        Objects.equals(this.results, ihcReport.results);
+    return Objects.equals(this.specimen, ihcReport.specimen)
+        && Objects.equals(this.issuedOn, ihcReport.issuedOn)
+        && Objects.equals(this.patient, ihcReport.patient)
+        && Objects.equals(this.id, ihcReport.id)
+        && Objects.equals(this.results, ihcReport.results);
   }
 
   @Override
@@ -179,7 +141,7 @@ public class IhcReport {
     return o == null ? "null" : o.toString().replace("\n", "\n    ");
   }
 
-    public static class Builder {
+  public static class Builder {
 
     private IhcReport instance;
 
@@ -195,23 +157,26 @@ public class IhcReport {
       this.instance.specimen = specimen;
       return this;
     }
+
     public IhcReport.Builder issuedOn(Date issuedOn) {
       this.instance.issuedOn = issuedOn;
       return this;
     }
+
     public IhcReport.Builder patient(Reference patient) {
       this.instance.patient = patient;
       return this;
     }
+
     public IhcReport.Builder id(String id) {
       this.instance.id = id;
       return this;
     }
+
     public IhcReport.Builder results(IhcReportResults results) {
       this.instance.results = results;
       return this;
     }
-
 
     public IhcReport build() {
       try {
@@ -234,12 +199,10 @@ public class IhcReport {
 
   public IhcReport.Builder toBuilder() {
     return new IhcReport.Builder()
-      .specimen(getSpecimen())
-      .issuedOn(getIssuedOn())
-      .patient(getPatient())
-      .id(getId())
-      .results(getResults());
+        .specimen(getSpecimen())
+        .issuedOn(getIssuedOn())
+        .patient(getPatient())
+        .id(getId())
+        .results(getResults());
   }
-
 }
-

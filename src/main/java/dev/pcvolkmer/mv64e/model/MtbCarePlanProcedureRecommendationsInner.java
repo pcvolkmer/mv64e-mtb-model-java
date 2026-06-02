@@ -1,93 +1,74 @@
-
-
 package dev.pcvolkmer.mv64e.model;
 
-import java.util.Objects;
-import java.util.Map;
-import java.util.HashMap;
-import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonTypeName;
-import com.fasterxml.jackson.annotation.JsonValue;
-import dev.pcvolkmer.mv64e.model.GeneAlterationReference;
-import dev.pcvolkmer.mv64e.model.LevelOfEvidence;
-import dev.pcvolkmer.mv64e.model.MtbProcedureRecommendationCategoryCoding;
-import dev.pcvolkmer.mv64e.model.RecommendationPriorityCoding;
-import dev.pcvolkmer.mv64e.model.Reference;
+import com.fasterxml.jackson.annotation.*;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
+import java.util.Objects;
 import org.jspecify.annotations.Nullable;
-
 
 public class MtbCarePlanProcedureRecommendationsInner {
   public static final String JSON_PROPERTY_PRIORITY = "priority";
-  
+
   private RecommendationPriorityCoding priority;
 
   public static final String JSON_PROPERTY_SUPPORTING_VARIANTS = "supportingVariants";
-  
+
   private @Nullable List<GeneAlterationReference> supportingVariants;
 
   public static final String JSON_PROPERTY_REASON = "reason";
-  
+
   private @Nullable Reference reason;
 
   public static final String JSON_PROPERTY_CODE = "code";
-  
+
   private MtbProcedureRecommendationCategoryCoding code;
 
   public static final String JSON_PROPERTY_ISSUED_ON = "issuedOn";
-  
+
   private Date issuedOn;
 
   public static final String JSON_PROPERTY_PATIENT = "patient";
-  
+
   private Reference patient;
 
   public static final String JSON_PROPERTY_SUPPORTING_FINDINGS = "supportingFindings";
-  
+
   private @Nullable List<Reference> supportingFindings;
 
   public static final String JSON_PROPERTY_LEVEL_OF_EVIDENCE = "levelOfEvidence";
-  
+
   private @Nullable LevelOfEvidence levelOfEvidence;
 
   public static final String JSON_PROPERTY_ID = "id";
-  
+
   private String id;
 
-  public MtbCarePlanProcedureRecommendationsInner() { 
-  }
+  public MtbCarePlanProcedureRecommendationsInner() {}
 
   public MtbCarePlanProcedureRecommendationsInner priority(RecommendationPriorityCoding priority) {
     this.priority = priority;
     return this;
   }
 
-  
   @JsonProperty(value = JSON_PROPERTY_PRIORITY, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public RecommendationPriorityCoding getPriority() {
     return priority;
   }
 
-
   @JsonProperty(value = JSON_PROPERTY_PRIORITY, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setPriority(RecommendationPriorityCoding priority) {
     this.priority = priority;
   }
 
-
-  public MtbCarePlanProcedureRecommendationsInner supportingVariants(@Nullable List<GeneAlterationReference> supportingVariants) {
+  public MtbCarePlanProcedureRecommendationsInner supportingVariants(
+      @Nullable List<GeneAlterationReference> supportingVariants) {
     this.supportingVariants = supportingVariants;
     return this;
   }
 
-  public MtbCarePlanProcedureRecommendationsInner addSupportingVariantsItem(GeneAlterationReference supportingVariantsItem) {
+  public MtbCarePlanProcedureRecommendationsInner addSupportingVariantsItem(
+      GeneAlterationReference supportingVariantsItem) {
     if (this.supportingVariants == null) {
       this.supportingVariants = new ArrayList<>();
     }
@@ -95,107 +76,86 @@ public class MtbCarePlanProcedureRecommendationsInner {
     return this;
   }
 
-  
   @JsonProperty(value = JSON_PROPERTY_SUPPORTING_VARIANTS, required = false)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public @Nullable List<GeneAlterationReference> getSupportingVariants() {
     return supportingVariants;
   }
 
-
   @JsonProperty(value = JSON_PROPERTY_SUPPORTING_VARIANTS, required = false)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setSupportingVariants(@Nullable List<GeneAlterationReference> supportingVariants) {
     this.supportingVariants = supportingVariants;
   }
-
 
   public MtbCarePlanProcedureRecommendationsInner reason(@Nullable Reference reason) {
     this.reason = reason;
     return this;
   }
 
-  
   @JsonProperty(value = JSON_PROPERTY_REASON, required = false)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public @Nullable Reference getReason() {
     return reason;
   }
 
-
   @JsonProperty(value = JSON_PROPERTY_REASON, required = false)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setReason(@Nullable Reference reason) {
     this.reason = reason;
   }
 
-
-  public MtbCarePlanProcedureRecommendationsInner code(MtbProcedureRecommendationCategoryCoding code) {
+  public MtbCarePlanProcedureRecommendationsInner code(
+      MtbProcedureRecommendationCategoryCoding code) {
     this.code = code;
     return this;
   }
 
-  
   @JsonProperty(value = JSON_PROPERTY_CODE, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public MtbProcedureRecommendationCategoryCoding getCode() {
     return code;
   }
 
-
   @JsonProperty(value = JSON_PROPERTY_CODE, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setCode(MtbProcedureRecommendationCategoryCoding code) {
     this.code = code;
   }
-
 
   public MtbCarePlanProcedureRecommendationsInner issuedOn(Date issuedOn) {
     this.issuedOn = issuedOn;
     return this;
   }
 
-  
   @JsonProperty(value = JSON_PROPERTY_ISSUED_ON, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
   public Date getIssuedOn() {
     return issuedOn;
   }
 
-
   @JsonProperty(value = JSON_PROPERTY_ISSUED_ON, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setIssuedOn(Date issuedOn) {
     this.issuedOn = issuedOn;
   }
-
 
   public MtbCarePlanProcedureRecommendationsInner patient(Reference patient) {
     this.patient = patient;
     return this;
   }
 
-  
   @JsonProperty(value = JSON_PROPERTY_PATIENT, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public Reference getPatient() {
     return patient;
   }
 
-
   @JsonProperty(value = JSON_PROPERTY_PATIENT, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setPatient(Reference patient) {
     this.patient = patient;
   }
 
-
-  public MtbCarePlanProcedureRecommendationsInner supportingFindings(@Nullable List<Reference> supportingFindings) {
+  public MtbCarePlanProcedureRecommendationsInner supportingFindings(
+      @Nullable List<Reference> supportingFindings) {
     this.supportingFindings = supportingFindings;
     return this;
   }
 
-  public MtbCarePlanProcedureRecommendationsInner addSupportingFindingsItem(Reference supportingFindingsItem) {
+  public MtbCarePlanProcedureRecommendationsInner addSupportingFindingsItem(
+      Reference supportingFindingsItem) {
     if (this.supportingFindings == null) {
       this.supportingFindings = new ArrayList<>();
     }
@@ -203,60 +163,46 @@ public class MtbCarePlanProcedureRecommendationsInner {
     return this;
   }
 
-  
   @JsonProperty(value = JSON_PROPERTY_SUPPORTING_FINDINGS, required = false)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public @Nullable List<Reference> getSupportingFindings() {
     return supportingFindings;
   }
 
-
   @JsonProperty(value = JSON_PROPERTY_SUPPORTING_FINDINGS, required = false)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setSupportingFindings(@Nullable List<Reference> supportingFindings) {
     this.supportingFindings = supportingFindings;
   }
 
-
-  public MtbCarePlanProcedureRecommendationsInner levelOfEvidence(@Nullable LevelOfEvidence levelOfEvidence) {
+  public MtbCarePlanProcedureRecommendationsInner levelOfEvidence(
+      @Nullable LevelOfEvidence levelOfEvidence) {
     this.levelOfEvidence = levelOfEvidence;
     return this;
   }
 
-  
   @JsonProperty(value = JSON_PROPERTY_LEVEL_OF_EVIDENCE, required = false)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public @Nullable LevelOfEvidence getLevelOfEvidence() {
     return levelOfEvidence;
   }
 
-
   @JsonProperty(value = JSON_PROPERTY_LEVEL_OF_EVIDENCE, required = false)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setLevelOfEvidence(@Nullable LevelOfEvidence levelOfEvidence) {
     this.levelOfEvidence = levelOfEvidence;
   }
-
 
   public MtbCarePlanProcedureRecommendationsInner id(String id) {
     this.id = id;
     return this;
   }
 
-  
   @JsonProperty(value = JSON_PROPERTY_ID, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public String getId() {
     return id;
   }
 
-
   @JsonProperty(value = JSON_PROPERTY_ID, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setId(String id) {
     this.id = id;
   }
-
 
   @Override
   public boolean equals(Object o) {
@@ -266,21 +212,34 @@ public class MtbCarePlanProcedureRecommendationsInner {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    MtbCarePlanProcedureRecommendationsInner mtbCarePlanProcedureRecommendationsInner = (MtbCarePlanProcedureRecommendationsInner) o;
-    return Objects.equals(this.priority, mtbCarePlanProcedureRecommendationsInner.priority) &&
-        Objects.equals(this.supportingVariants, mtbCarePlanProcedureRecommendationsInner.supportingVariants) &&
-        Objects.equals(this.reason, mtbCarePlanProcedureRecommendationsInner.reason) &&
-        Objects.equals(this.code, mtbCarePlanProcedureRecommendationsInner.code) &&
-        Objects.equals(this.issuedOn, mtbCarePlanProcedureRecommendationsInner.issuedOn) &&
-        Objects.equals(this.patient, mtbCarePlanProcedureRecommendationsInner.patient) &&
-        Objects.equals(this.supportingFindings, mtbCarePlanProcedureRecommendationsInner.supportingFindings) &&
-        Objects.equals(this.levelOfEvidence, mtbCarePlanProcedureRecommendationsInner.levelOfEvidence) &&
-        Objects.equals(this.id, mtbCarePlanProcedureRecommendationsInner.id);
+    MtbCarePlanProcedureRecommendationsInner mtbCarePlanProcedureRecommendationsInner =
+        (MtbCarePlanProcedureRecommendationsInner) o;
+    return Objects.equals(this.priority, mtbCarePlanProcedureRecommendationsInner.priority)
+        && Objects.equals(
+            this.supportingVariants, mtbCarePlanProcedureRecommendationsInner.supportingVariants)
+        && Objects.equals(this.reason, mtbCarePlanProcedureRecommendationsInner.reason)
+        && Objects.equals(this.code, mtbCarePlanProcedureRecommendationsInner.code)
+        && Objects.equals(this.issuedOn, mtbCarePlanProcedureRecommendationsInner.issuedOn)
+        && Objects.equals(this.patient, mtbCarePlanProcedureRecommendationsInner.patient)
+        && Objects.equals(
+            this.supportingFindings, mtbCarePlanProcedureRecommendationsInner.supportingFindings)
+        && Objects.equals(
+            this.levelOfEvidence, mtbCarePlanProcedureRecommendationsInner.levelOfEvidence)
+        && Objects.equals(this.id, mtbCarePlanProcedureRecommendationsInner.id);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(priority, supportingVariants, reason, code, issuedOn, patient, supportingFindings, levelOfEvidence, id);
+    return Objects.hash(
+        priority,
+        supportingVariants,
+        reason,
+        code,
+        issuedOn,
+        patient,
+        supportingFindings,
+        levelOfEvidence,
+        id);
   }
 
   @Override
@@ -304,7 +263,7 @@ public class MtbCarePlanProcedureRecommendationsInner {
     return o == null ? "null" : o.toString().replace("\n", "\n    ");
   }
 
-    public static class Builder {
+  public static class Builder {
 
     private MtbCarePlanProcedureRecommendationsInner instance;
 
@@ -316,43 +275,55 @@ public class MtbCarePlanProcedureRecommendationsInner {
       this.instance = instance;
     }
 
-    public MtbCarePlanProcedureRecommendationsInner.Builder priority(RecommendationPriorityCoding priority) {
+    public MtbCarePlanProcedureRecommendationsInner.Builder priority(
+        RecommendationPriorityCoding priority) {
       this.instance.priority = priority;
       return this;
     }
-    public MtbCarePlanProcedureRecommendationsInner.Builder supportingVariants(List<GeneAlterationReference> supportingVariants) {
+
+    public MtbCarePlanProcedureRecommendationsInner.Builder supportingVariants(
+        List<GeneAlterationReference> supportingVariants) {
       this.instance.supportingVariants = supportingVariants;
       return this;
     }
+
     public MtbCarePlanProcedureRecommendationsInner.Builder reason(Reference reason) {
       this.instance.reason = reason;
       return this;
     }
-    public MtbCarePlanProcedureRecommendationsInner.Builder code(MtbProcedureRecommendationCategoryCoding code) {
+
+    public MtbCarePlanProcedureRecommendationsInner.Builder code(
+        MtbProcedureRecommendationCategoryCoding code) {
       this.instance.code = code;
       return this;
     }
+
     public MtbCarePlanProcedureRecommendationsInner.Builder issuedOn(Date issuedOn) {
       this.instance.issuedOn = issuedOn;
       return this;
     }
+
     public MtbCarePlanProcedureRecommendationsInner.Builder patient(Reference patient) {
       this.instance.patient = patient;
       return this;
     }
-    public MtbCarePlanProcedureRecommendationsInner.Builder supportingFindings(List<Reference> supportingFindings) {
+
+    public MtbCarePlanProcedureRecommendationsInner.Builder supportingFindings(
+        List<Reference> supportingFindings) {
       this.instance.supportingFindings = supportingFindings;
       return this;
     }
-    public MtbCarePlanProcedureRecommendationsInner.Builder levelOfEvidence(LevelOfEvidence levelOfEvidence) {
+
+    public MtbCarePlanProcedureRecommendationsInner.Builder levelOfEvidence(
+        LevelOfEvidence levelOfEvidence) {
       this.instance.levelOfEvidence = levelOfEvidence;
       return this;
     }
+
     public MtbCarePlanProcedureRecommendationsInner.Builder id(String id) {
       this.instance.id = id;
       return this;
     }
-
 
     public MtbCarePlanProcedureRecommendationsInner build() {
       try {
@@ -375,16 +346,14 @@ public class MtbCarePlanProcedureRecommendationsInner {
 
   public MtbCarePlanProcedureRecommendationsInner.Builder toBuilder() {
     return new MtbCarePlanProcedureRecommendationsInner.Builder()
-      .priority(getPriority())
-      .supportingVariants(getSupportingVariants())
-      .reason(getReason())
-      .code(getCode())
-      .issuedOn(getIssuedOn())
-      .patient(getPatient())
-      .supportingFindings(getSupportingFindings())
-      .levelOfEvidence(getLevelOfEvidence())
-      .id(getId());
+        .priority(getPriority())
+        .supportingVariants(getSupportingVariants())
+        .reason(getReason())
+        .code(getCode())
+        .issuedOn(getIssuedOn())
+        .patient(getPatient())
+        .supportingFindings(getSupportingFindings())
+        .levelOfEvidence(getLevelOfEvidence())
+        .id(getId());
   }
-
 }
-

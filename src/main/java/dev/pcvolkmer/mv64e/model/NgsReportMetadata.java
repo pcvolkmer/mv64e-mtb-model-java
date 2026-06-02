@@ -1,143 +1,106 @@
-
-
 package dev.pcvolkmer.mv64e.model;
 
-import java.util.Objects;
-import java.util.Map;
-import java.util.HashMap;
-import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonTypeName;
-import com.fasterxml.jackson.annotation.JsonValue;
 import java.net.URI;
-import java.util.Arrays;
-import org.jspecify.annotations.Nullable;
-
+import java.util.Objects;
 
 public class NgsReportMetadata {
   public static final String JSON_PROPERTY_KIT_MANUFACTURER = "kitManufacturer";
-  
+
   private String kitManufacturer;
 
   public static final String JSON_PROPERTY_PIPELINE = "pipeline";
-  
+
   private URI pipeline;
 
   public static final String JSON_PROPERTY_KIT_TYPE = "kitType";
-  
+
   private String kitType;
 
   public static final String JSON_PROPERTY_SEQUENCER = "sequencer";
-  
+
   private String sequencer;
 
   public static final String JSON_PROPERTY_REFERENCE_GENOME = "referenceGenome";
-  
+
   private String referenceGenome;
 
-  public NgsReportMetadata() { 
-  }
+  public NgsReportMetadata() {}
 
   public NgsReportMetadata kitManufacturer(String kitManufacturer) {
     this.kitManufacturer = kitManufacturer;
     return this;
   }
 
-  
   @JsonProperty(value = JSON_PROPERTY_KIT_MANUFACTURER, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public String getKitManufacturer() {
     return kitManufacturer;
   }
 
-
   @JsonProperty(value = JSON_PROPERTY_KIT_MANUFACTURER, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setKitManufacturer(String kitManufacturer) {
     this.kitManufacturer = kitManufacturer;
   }
-
 
   public NgsReportMetadata pipeline(URI pipeline) {
     this.pipeline = pipeline;
     return this;
   }
 
-  
   @JsonProperty(value = JSON_PROPERTY_PIPELINE, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public URI getPipeline() {
     return pipeline;
   }
 
-
   @JsonProperty(value = JSON_PROPERTY_PIPELINE, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setPipeline(URI pipeline) {
     this.pipeline = pipeline;
   }
-
 
   public NgsReportMetadata kitType(String kitType) {
     this.kitType = kitType;
     return this;
   }
 
-  
   @JsonProperty(value = JSON_PROPERTY_KIT_TYPE, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public String getKitType() {
     return kitType;
   }
 
-
   @JsonProperty(value = JSON_PROPERTY_KIT_TYPE, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setKitType(String kitType) {
     this.kitType = kitType;
   }
-
 
   public NgsReportMetadata sequencer(String sequencer) {
     this.sequencer = sequencer;
     return this;
   }
 
-  
   @JsonProperty(value = JSON_PROPERTY_SEQUENCER, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public String getSequencer() {
     return sequencer;
   }
 
-
   @JsonProperty(value = JSON_PROPERTY_SEQUENCER, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setSequencer(String sequencer) {
     this.sequencer = sequencer;
   }
-
 
   public NgsReportMetadata referenceGenome(String referenceGenome) {
     this.referenceGenome = referenceGenome;
     return this;
   }
 
-  
   @JsonProperty(value = JSON_PROPERTY_REFERENCE_GENOME, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public String getReferenceGenome() {
     return referenceGenome;
   }
 
-
   @JsonProperty(value = JSON_PROPERTY_REFERENCE_GENOME, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setReferenceGenome(String referenceGenome) {
     this.referenceGenome = referenceGenome;
   }
-
 
   @Override
   public boolean equals(Object o) {
@@ -148,11 +111,11 @@ public class NgsReportMetadata {
       return false;
     }
     NgsReportMetadata ngsReportMetadata = (NgsReportMetadata) o;
-    return Objects.equals(this.kitManufacturer, ngsReportMetadata.kitManufacturer) &&
-        Objects.equals(this.pipeline, ngsReportMetadata.pipeline) &&
-        Objects.equals(this.kitType, ngsReportMetadata.kitType) &&
-        Objects.equals(this.sequencer, ngsReportMetadata.sequencer) &&
-        Objects.equals(this.referenceGenome, ngsReportMetadata.referenceGenome);
+    return Objects.equals(this.kitManufacturer, ngsReportMetadata.kitManufacturer)
+        && Objects.equals(this.pipeline, ngsReportMetadata.pipeline)
+        && Objects.equals(this.kitType, ngsReportMetadata.kitType)
+        && Objects.equals(this.sequencer, ngsReportMetadata.sequencer)
+        && Objects.equals(this.referenceGenome, ngsReportMetadata.referenceGenome);
   }
 
   @Override
@@ -177,7 +140,7 @@ public class NgsReportMetadata {
     return o == null ? "null" : o.toString().replace("\n", "\n    ");
   }
 
-    public static class Builder {
+  public static class Builder {
 
     private NgsReportMetadata instance;
 
@@ -193,23 +156,26 @@ public class NgsReportMetadata {
       this.instance.kitManufacturer = kitManufacturer;
       return this;
     }
+
     public NgsReportMetadata.Builder pipeline(URI pipeline) {
       this.instance.pipeline = pipeline;
       return this;
     }
+
     public NgsReportMetadata.Builder kitType(String kitType) {
       this.instance.kitType = kitType;
       return this;
     }
+
     public NgsReportMetadata.Builder sequencer(String sequencer) {
       this.instance.sequencer = sequencer;
       return this;
     }
+
     public NgsReportMetadata.Builder referenceGenome(String referenceGenome) {
       this.instance.referenceGenome = referenceGenome;
       return this;
     }
-
 
     public NgsReportMetadata build() {
       try {
@@ -232,12 +198,10 @@ public class NgsReportMetadata {
 
   public NgsReportMetadata.Builder toBuilder() {
     return new NgsReportMetadata.Builder()
-      .kitManufacturer(getKitManufacturer())
-      .pipeline(getPipeline())
-      .kitType(getKitType())
-      .sequencer(getSequencer())
-      .referenceGenome(getReferenceGenome());
+        .kitManufacturer(getKitManufacturer())
+        .pipeline(getPipeline())
+        .kitType(getKitType())
+        .sequencer(getSequencer())
+        .referenceGenome(getReferenceGenome());
   }
-
 }
-

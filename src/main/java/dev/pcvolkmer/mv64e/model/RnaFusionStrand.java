@@ -1,20 +1,11 @@
-
-
 package dev.pcvolkmer.mv64e.model;
-
-import java.util.Objects;
-import java.util.Map;
-import java.util.HashMap;
-import org.jspecify.annotations.Nullable;
-
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 
 public enum RnaFusionStrand {
-  
   PLUS("+"),
-  
+
   MINUS("-");
 
   private String value;
@@ -42,6 +33,4 @@ public enum RnaFusionStrand {
     }
     throw new IllegalArgumentException("Unexpected value '" + value + "'");
   }
-
 }
-

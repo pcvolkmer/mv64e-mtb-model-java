@@ -1,97 +1,69 @@
-
-
 package dev.pcvolkmer.mv64e.model;
 
-import java.util.Objects;
-import java.util.Map;
-import java.util.HashMap;
-import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonTypeName;
-import com.fasterxml.jackson.annotation.JsonValue;
-import dev.pcvolkmer.mv64e.model.ConsentProvisionType;
-import dev.pcvolkmer.mv64e.model.ModelProjectConsentPurpose;
-import java.util.Arrays;
+import com.fasterxml.jackson.annotation.*;
 import java.util.Date;
-import org.jspecify.annotations.Nullable;
-
+import java.util.Objects;
 
 public class MvhMetadataModelProjectConsentProvisionsInner {
   public static final String JSON_PROPERTY_DATE = "date";
-  
+
   private Date date;
 
   public static final String JSON_PROPERTY_PURPOSE = "purpose";
-  
+
   private ModelProjectConsentPurpose purpose;
 
   public static final String JSON_PROPERTY_TYPE = "type";
-  
+
   private ConsentProvisionType type;
 
-  public MvhMetadataModelProjectConsentProvisionsInner() { 
-  }
+  public MvhMetadataModelProjectConsentProvisionsInner() {}
 
   public MvhMetadataModelProjectConsentProvisionsInner date(Date date) {
     this.date = date;
     return this;
   }
 
-  
   @JsonProperty(value = JSON_PROPERTY_DATE, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
   public Date getDate() {
     return date;
   }
 
-
   @JsonProperty(value = JSON_PROPERTY_DATE, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setDate(Date date) {
     this.date = date;
   }
-
 
   public MvhMetadataModelProjectConsentProvisionsInner purpose(ModelProjectConsentPurpose purpose) {
     this.purpose = purpose;
     return this;
   }
 
-  
   @JsonProperty(value = JSON_PROPERTY_PURPOSE, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public ModelProjectConsentPurpose getPurpose() {
     return purpose;
   }
 
-
   @JsonProperty(value = JSON_PROPERTY_PURPOSE, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setPurpose(ModelProjectConsentPurpose purpose) {
     this.purpose = purpose;
   }
-
 
   public MvhMetadataModelProjectConsentProvisionsInner type(ConsentProvisionType type) {
     this.type = type;
     return this;
   }
 
-  
   @JsonProperty(value = JSON_PROPERTY_TYPE, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public ConsentProvisionType getType() {
     return type;
   }
 
-
   @JsonProperty(value = JSON_PROPERTY_TYPE, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setType(ConsentProvisionType type) {
     this.type = type;
   }
-
 
   @Override
   public boolean equals(Object o) {
@@ -101,10 +73,11 @@ public class MvhMetadataModelProjectConsentProvisionsInner {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    MvhMetadataModelProjectConsentProvisionsInner mvhMetadataModelProjectConsentProvisionsInner = (MvhMetadataModelProjectConsentProvisionsInner) o;
-    return Objects.equals(this.date, mvhMetadataModelProjectConsentProvisionsInner.date) &&
-        Objects.equals(this.purpose, mvhMetadataModelProjectConsentProvisionsInner.purpose) &&
-        Objects.equals(this.type, mvhMetadataModelProjectConsentProvisionsInner.type);
+    MvhMetadataModelProjectConsentProvisionsInner mvhMetadataModelProjectConsentProvisionsInner =
+        (MvhMetadataModelProjectConsentProvisionsInner) o;
+    return Objects.equals(this.date, mvhMetadataModelProjectConsentProvisionsInner.date)
+        && Objects.equals(this.purpose, mvhMetadataModelProjectConsentProvisionsInner.purpose)
+        && Objects.equals(this.type, mvhMetadataModelProjectConsentProvisionsInner.type);
   }
 
   @Override
@@ -127,7 +100,7 @@ public class MvhMetadataModelProjectConsentProvisionsInner {
     return o == null ? "null" : o.toString().replace("\n", "\n    ");
   }
 
-    public static class Builder {
+  public static class Builder {
 
     private MvhMetadataModelProjectConsentProvisionsInner instance;
 
@@ -143,15 +116,17 @@ public class MvhMetadataModelProjectConsentProvisionsInner {
       this.instance.date = date;
       return this;
     }
-    public MvhMetadataModelProjectConsentProvisionsInner.Builder purpose(ModelProjectConsentPurpose purpose) {
+
+    public MvhMetadataModelProjectConsentProvisionsInner.Builder purpose(
+        ModelProjectConsentPurpose purpose) {
       this.instance.purpose = purpose;
       return this;
     }
+
     public MvhMetadataModelProjectConsentProvisionsInner.Builder type(ConsentProvisionType type) {
       this.instance.type = type;
       return this;
     }
-
 
     public MvhMetadataModelProjectConsentProvisionsInner build() {
       try {
@@ -174,10 +149,8 @@ public class MvhMetadataModelProjectConsentProvisionsInner {
 
   public MvhMetadataModelProjectConsentProvisionsInner.Builder toBuilder() {
     return new MvhMetadataModelProjectConsentProvisionsInner.Builder()
-      .date(getDate())
-      .purpose(getPurpose())
-      .type(getType());
+        .date(getDate())
+        .purpose(getPurpose())
+        .type(getType());
   }
-
 }
-

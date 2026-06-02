@@ -1,35 +1,27 @@
-
-
 package dev.pcvolkmer.mv64e.model;
 
-import java.util.Objects;
-import java.util.Map;
-import java.util.HashMap;
-import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonTypeName;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.Arrays;
+import java.util.Objects;
 import org.jspecify.annotations.Nullable;
-
 
 public class NgsReportTypeCoding {
   public enum CodeEnum {
     ARRAY(String.valueOf("array")),
-    
+
     GENOME_SHORT_READ(String.valueOf("genome-short-read")),
-    
+
     EXOME(String.valueOf("exome")),
-    
+
     KARYOTYPING(String.valueOf("karyotyping")),
-    
+
     PANEL(String.valueOf("panel")),
-    
+
     SINGLE(String.valueOf("single")),
-    
+
     GENOME_LONG_READ(String.valueOf("genome-long-read")),
-    
+
     OTHER(String.valueOf("other"));
 
     private String value;
@@ -60,103 +52,82 @@ public class NgsReportTypeCoding {
   }
 
   public static final String JSON_PROPERTY_CODE = "code";
-  
+
   private CodeEnum code;
 
   public static final String JSON_PROPERTY_DISPLAY = "display";
-  
+
   private @Nullable String display;
 
   public static final String JSON_PROPERTY_SYSTEM = "system";
-  
+
   private @Nullable String system;
 
   public static final String JSON_PROPERTY_VERSION = "version";
-  
+
   private @Nullable String version;
 
-  public NgsReportTypeCoding() { 
-  }
+  public NgsReportTypeCoding() {}
 
   public NgsReportTypeCoding code(CodeEnum code) {
     this.code = code;
     return this;
   }
 
-  
   @JsonProperty(value = JSON_PROPERTY_CODE, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public CodeEnum getCode() {
     return code;
   }
 
-
   @JsonProperty(value = JSON_PROPERTY_CODE, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setCode(CodeEnum code) {
     this.code = code;
   }
-
 
   public NgsReportTypeCoding display(@Nullable String display) {
     this.display = display;
     return this;
   }
 
-  
   @JsonProperty(value = JSON_PROPERTY_DISPLAY, required = false)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public @Nullable String getDisplay() {
     return display;
   }
 
-
   @JsonProperty(value = JSON_PROPERTY_DISPLAY, required = false)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setDisplay(@Nullable String display) {
     this.display = display;
   }
-
 
   public NgsReportTypeCoding system(@Nullable String system) {
     this.system = system;
     return this;
   }
 
-  
   @JsonProperty(value = JSON_PROPERTY_SYSTEM, required = false)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public @Nullable String getSystem() {
     return system;
   }
 
-
   @JsonProperty(value = JSON_PROPERTY_SYSTEM, required = false)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setSystem(@Nullable String system) {
     this.system = system;
   }
-
 
   public NgsReportTypeCoding version(@Nullable String version) {
     this.version = version;
     return this;
   }
 
-  
   @JsonProperty(value = JSON_PROPERTY_VERSION, required = false)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public @Nullable String getVersion() {
     return version;
   }
 
-
   @JsonProperty(value = JSON_PROPERTY_VERSION, required = false)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setVersion(@Nullable String version) {
     this.version = version;
   }
-
 
   @Override
   public boolean equals(Object o) {
@@ -167,10 +138,10 @@ public class NgsReportTypeCoding {
       return false;
     }
     NgsReportTypeCoding ngsReportTypeCoding = (NgsReportTypeCoding) o;
-    return Objects.equals(this.code, ngsReportTypeCoding.code) &&
-        Objects.equals(this.display, ngsReportTypeCoding.display) &&
-        Objects.equals(this.system, ngsReportTypeCoding.system) &&
-        Objects.equals(this.version, ngsReportTypeCoding.version);
+    return Objects.equals(this.code, ngsReportTypeCoding.code)
+        && Objects.equals(this.display, ngsReportTypeCoding.display)
+        && Objects.equals(this.system, ngsReportTypeCoding.system)
+        && Objects.equals(this.version, ngsReportTypeCoding.version);
   }
 
   @Override
@@ -194,7 +165,7 @@ public class NgsReportTypeCoding {
     return o == null ? "null" : o.toString().replace("\n", "\n    ");
   }
 
-    public static class Builder {
+  public static class Builder {
 
     private NgsReportTypeCoding instance;
 
@@ -210,19 +181,21 @@ public class NgsReportTypeCoding {
       this.instance.code = code;
       return this;
     }
+
     public NgsReportTypeCoding.Builder display(String display) {
       this.instance.display = display;
       return this;
     }
+
     public NgsReportTypeCoding.Builder system(String system) {
       this.instance.system = system;
       return this;
     }
+
     public NgsReportTypeCoding.Builder version(String version) {
       this.instance.version = version;
       return this;
     }
-
 
     public NgsReportTypeCoding build() {
       try {
@@ -245,11 +218,9 @@ public class NgsReportTypeCoding {
 
   public NgsReportTypeCoding.Builder toBuilder() {
     return new NgsReportTypeCoding.Builder()
-      .code(getCode())
-      .display(getDisplay())
-      .system(getSystem())
-      .version(getVersion());
+        .code(getCode())
+        .display(getDisplay())
+        .system(getSystem())
+        .version(getVersion());
   }
-
 }
-

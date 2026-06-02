@@ -1,26 +1,17 @@
-
-
 package dev.pcvolkmer.mv64e.model;
-
-import java.util.Objects;
-import java.util.Map;
-import java.util.HashMap;
-import org.jspecify.annotations.Nullable;
-
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 
 public enum MvhSubmissionType {
-  
   INITIAL("initial"),
-  
+
   CORRECTION("correction"),
-  
+
   TEST("test"),
-  
+
   ADDITION("addition"),
-  
+
   FOLLOWUP("followup");
 
   private String value;
@@ -48,6 +39,4 @@ public enum MvhSubmissionType {
     }
     throw new IllegalArgumentException("Unexpected value '" + value + "'");
   }
-
 }
-
