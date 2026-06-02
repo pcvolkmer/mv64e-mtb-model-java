@@ -1,28 +1,19 @@
-
-
 package dev.pcvolkmer.mv64e.model;
 
-import java.util.Objects;
-import java.util.Map;
-import java.util.HashMap;
-import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonTypeName;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
 import java.math.BigDecimal;
-import java.util.Arrays;
-import org.jspecify.annotations.Nullable;
-
+import java.util.Objects;
 
 public class Age {
   public static final String JSON_PROPERTY_VALUE = "value";
-  
+
   private BigDecimal value;
 
   public enum UnitEnum {
     MONTHS(String.valueOf("Months")),
-    
+
     YEARS(String.valueOf("Years"));
 
     private String value;
@@ -53,51 +44,40 @@ public class Age {
   }
 
   public static final String JSON_PROPERTY_UNIT = "unit";
-  
+
   private UnitEnum unit;
 
-  public Age() { 
-  }
+  public Age() {}
 
   public Age value(BigDecimal value) {
     this.value = value;
     return this;
   }
 
-  
   @JsonProperty(value = JSON_PROPERTY_VALUE, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public BigDecimal getValue() {
     return value;
   }
 
-
   @JsonProperty(value = JSON_PROPERTY_VALUE, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setValue(BigDecimal value) {
     this.value = value;
   }
-
 
   public Age unit(UnitEnum unit) {
     this.unit = unit;
     return this;
   }
 
-  
   @JsonProperty(value = JSON_PROPERTY_UNIT, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public UnitEnum getUnit() {
     return unit;
   }
 
-
   @JsonProperty(value = JSON_PROPERTY_UNIT, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setUnit(UnitEnum unit) {
     this.unit = unit;
   }
-
 
   @Override
   public boolean equals(Object o) {
@@ -108,8 +88,7 @@ public class Age {
       return false;
     }
     Age age = (Age) o;
-    return Objects.equals(this.value, age.value) &&
-        Objects.equals(this.unit, age.unit);
+    return Objects.equals(this.value, age.value) && Objects.equals(this.unit, age.unit);
   }
 
   @Override
@@ -131,7 +110,7 @@ public class Age {
     return o == null ? "null" : o.toString().replace("\n", "\n    ");
   }
 
-    public static class Builder {
+  public static class Builder {
 
     private Age instance;
 
@@ -147,11 +126,11 @@ public class Age {
       this.instance.value = value;
       return this;
     }
+
     public Age.Builder unit(UnitEnum unit) {
       this.instance.unit = unit;
       return this;
     }
-
 
     public Age build() {
       try {
@@ -173,10 +152,6 @@ public class Age {
   }
 
   public Age.Builder toBuilder() {
-    return new Age.Builder()
-      .value(getValue())
-      .unit(getUnit());
+    return new Age.Builder().value(getValue()).unit(getUnit());
   }
-
 }
-

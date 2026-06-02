@@ -1,31 +1,23 @@
-
-
 package dev.pcvolkmer.mv64e.model;
 
-import java.util.Objects;
-import java.util.Map;
-import java.util.HashMap;
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.Arrays;
-import org.jspecify.annotations.Nullable;
-
+import java.util.Objects;
 
 public class VariantExternalId {
   public static final String JSON_PROPERTY_VALUE = "value";
-  
+
   private String value;
 
   public enum SystemEnum {
     HTTPS_WWW_NCBI_NLM_NIH_GOV_ENTREZ(String.valueOf("https://www.ncbi.nlm.nih.gov/entrez")),
-    
+
     HTTPS_WWW_ENSEMBL_ORG(String.valueOf("https://www.ensembl.org")),
-    
+
     HTTPS_WWW_NCBI_NLM_NIH_GOV_SNP(String.valueOf("https://www.ncbi.nlm.nih.gov/snp")),
-    
+
     HTTPS_CANCER_SANGER_AC_UK_COSMIC(String.valueOf("https://cancer.sanger.ac.uk/cosmic"));
 
     private String value;
@@ -56,51 +48,44 @@ public class VariantExternalId {
   }
 
   public static final String JSON_PROPERTY_SYSTEM = "system";
-  
+
   private SystemEnum system;
 
-  public VariantExternalId() { 
-  }
+  public VariantExternalId() {}
 
   public VariantExternalId value(String value) {
     this.value = value;
     return this;
   }
 
-  
   @JsonProperty(value = JSON_PROPERTY_VALUE, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public String getValue() {
     return value;
   }
 
-
   @JsonProperty(value = JSON_PROPERTY_VALUE, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setValue(String value) {
     this.value = value;
   }
-
 
   public VariantExternalId system(SystemEnum system) {
     this.system = system;
     return this;
   }
 
-  
   @JsonProperty(value = JSON_PROPERTY_SYSTEM, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public SystemEnum getSystem() {
     return system;
   }
 
-
   @JsonProperty(value = JSON_PROPERTY_SYSTEM, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setSystem(SystemEnum system) {
     this.system = system;
   }
-
 
   @Override
   public boolean equals(Object o) {
@@ -111,8 +96,8 @@ public class VariantExternalId {
       return false;
     }
     VariantExternalId variantExternalId = (VariantExternalId) o;
-    return Objects.equals(this.value, variantExternalId.value) &&
-        Objects.equals(this.system, variantExternalId.system);
+    return Objects.equals(this.value, variantExternalId.value)
+        && Objects.equals(this.system, variantExternalId.system);
   }
 
   @Override
@@ -134,7 +119,7 @@ public class VariantExternalId {
     return o == null ? "null" : o.toString().replace("\n", "\n    ");
   }
 
-    public static class Builder {
+  public static class Builder {
 
     private VariantExternalId instance;
 
@@ -150,11 +135,11 @@ public class VariantExternalId {
       this.instance.value = value;
       return this;
     }
+
     public VariantExternalId.Builder system(SystemEnum system) {
       this.instance.system = system;
       return this;
     }
-
 
     public VariantExternalId build() {
       try {
@@ -176,10 +161,6 @@ public class VariantExternalId {
   }
 
   public VariantExternalId.Builder toBuilder() {
-    return new VariantExternalId.Builder()
-      .value(getValue())
-      .system(getSystem());
+    return new VariantExternalId.Builder().value(getValue()).system(getSystem());
   }
-
 }
-

@@ -1,29 +1,16 @@
-
-
 package dev.pcvolkmer.mv64e.model;
 
-import java.util.Objects;
-import java.util.Map;
-import java.util.HashMap;
-import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonTypeName;
-import com.fasterxml.jackson.annotation.JsonValue;
-import dev.pcvolkmer.mv64e.model.MtbDiagnosisTypeHistoryInner;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
-import org.jspecify.annotations.Nullable;
-
+import java.util.Objects;
 
 public class MtbDiagnosisType {
   public static final String JSON_PROPERTY_HISTORY = "history";
-  
+
   private List<MtbDiagnosisTypeHistoryInner> history;
 
-  public MtbDiagnosisType() { 
-  }
+  public MtbDiagnosisType() {}
 
   public MtbDiagnosisType history(List<MtbDiagnosisTypeHistoryInner> history) {
     this.history = history;
@@ -38,20 +25,15 @@ public class MtbDiagnosisType {
     return this;
   }
 
-  
   @JsonProperty(value = JSON_PROPERTY_HISTORY, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public List<MtbDiagnosisTypeHistoryInner> getHistory() {
     return history;
   }
 
-
   @JsonProperty(value = JSON_PROPERTY_HISTORY, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setHistory(List<MtbDiagnosisTypeHistoryInner> history) {
     this.history = history;
   }
-
 
   @Override
   public boolean equals(Object o) {
@@ -83,7 +65,7 @@ public class MtbDiagnosisType {
     return o == null ? "null" : o.toString().replace("\n", "\n    ");
   }
 
-    public static class Builder {
+  public static class Builder {
 
     private MtbDiagnosisType instance;
 
@@ -99,7 +81,6 @@ public class MtbDiagnosisType {
       this.instance.history = history;
       return this;
     }
-
 
     public MtbDiagnosisType build() {
       try {
@@ -121,9 +102,6 @@ public class MtbDiagnosisType {
   }
 
   public MtbDiagnosisType.Builder toBuilder() {
-    return new MtbDiagnosisType.Builder()
-      .history(getHistory());
+    return new MtbDiagnosisType.Builder().history(getHistory());
   }
-
 }
-

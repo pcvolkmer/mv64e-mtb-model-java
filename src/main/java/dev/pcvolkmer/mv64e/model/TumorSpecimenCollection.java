@@ -1,50 +1,36 @@
-
-
 package dev.pcvolkmer.mv64e.model;
 
-import java.util.Objects;
-import java.util.Map;
-import java.util.HashMap;
-import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonTypeName;
-import com.fasterxml.jackson.annotation.JsonValue;
-import dev.pcvolkmer.mv64e.model.TumorSpecimenCollectionLocalizationCoding;
-import dev.pcvolkmer.mv64e.model.TumorSpecimenCollectionMethodCoding;
-import java.util.Arrays;
+import com.fasterxml.jackson.annotation.*;
 import java.util.Date;
+import java.util.Objects;
 import org.jspecify.annotations.Nullable;
-
 
 public class TumorSpecimenCollection {
   public static final String JSON_PROPERTY_DATE = "date";
-  
+
   private @Nullable Date date;
 
   public static final String JSON_PROPERTY_METHOD = "method";
-  
+
   private TumorSpecimenCollectionMethodCoding method;
 
   public static final String JSON_PROPERTY_LOCALIZATION = "localization";
-  
+
   private TumorSpecimenCollectionLocalizationCoding localization;
 
-  public TumorSpecimenCollection() { 
-  }
+  public TumorSpecimenCollection() {}
 
   public TumorSpecimenCollection date(@Nullable Date date) {
     this.date = date;
     return this;
   }
 
-  
   @JsonProperty(value = JSON_PROPERTY_DATE, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
   public @Nullable Date getDate() {
     return date;
   }
-
 
   @JsonProperty(value = JSON_PROPERTY_DATE, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
@@ -52,46 +38,40 @@ public class TumorSpecimenCollection {
     this.date = date;
   }
 
-
   public TumorSpecimenCollection method(TumorSpecimenCollectionMethodCoding method) {
     this.method = method;
     return this;
   }
 
-  
   @JsonProperty(value = JSON_PROPERTY_METHOD, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public TumorSpecimenCollectionMethodCoding getMethod() {
     return method;
   }
 
-
   @JsonProperty(value = JSON_PROPERTY_METHOD, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setMethod(TumorSpecimenCollectionMethodCoding method) {
     this.method = method;
   }
 
-
-  public TumorSpecimenCollection localization(TumorSpecimenCollectionLocalizationCoding localization) {
+  public TumorSpecimenCollection localization(
+      TumorSpecimenCollectionLocalizationCoding localization) {
     this.localization = localization;
     return this;
   }
 
-  
   @JsonProperty(value = JSON_PROPERTY_LOCALIZATION, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public TumorSpecimenCollectionLocalizationCoding getLocalization() {
     return localization;
   }
 
-
   @JsonProperty(value = JSON_PROPERTY_LOCALIZATION, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setLocalization(TumorSpecimenCollectionLocalizationCoding localization) {
     this.localization = localization;
   }
-
 
   @Override
   public boolean equals(Object o) {
@@ -102,9 +82,9 @@ public class TumorSpecimenCollection {
       return false;
     }
     TumorSpecimenCollection tumorSpecimenCollection = (TumorSpecimenCollection) o;
-    return Objects.equals(this.date, tumorSpecimenCollection.date) &&
-        Objects.equals(this.method, tumorSpecimenCollection.method) &&
-        Objects.equals(this.localization, tumorSpecimenCollection.localization);
+    return Objects.equals(this.date, tumorSpecimenCollection.date)
+        && Objects.equals(this.method, tumorSpecimenCollection.method)
+        && Objects.equals(this.localization, tumorSpecimenCollection.localization);
   }
 
   @Override
@@ -127,7 +107,7 @@ public class TumorSpecimenCollection {
     return o == null ? "null" : o.toString().replace("\n", "\n    ");
   }
 
-    public static class Builder {
+  public static class Builder {
 
     private TumorSpecimenCollection instance;
 
@@ -143,15 +123,17 @@ public class TumorSpecimenCollection {
       this.instance.date = date;
       return this;
     }
+
     public TumorSpecimenCollection.Builder method(TumorSpecimenCollectionMethodCoding method) {
       this.instance.method = method;
       return this;
     }
-    public TumorSpecimenCollection.Builder localization(TumorSpecimenCollectionLocalizationCoding localization) {
+
+    public TumorSpecimenCollection.Builder localization(
+        TumorSpecimenCollectionLocalizationCoding localization) {
       this.instance.localization = localization;
       return this;
     }
-
 
     public TumorSpecimenCollection build() {
       try {
@@ -174,10 +156,8 @@ public class TumorSpecimenCollection {
 
   public TumorSpecimenCollection.Builder toBuilder() {
     return new TumorSpecimenCollection.Builder()
-      .date(getDate())
-      .method(getMethod())
-      .localization(getLocalization());
+        .date(getDate())
+        .method(getMethod())
+        .localization(getLocalization());
   }
-
 }
-

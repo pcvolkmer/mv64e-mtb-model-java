@@ -1,71 +1,50 @@
-
-
 package dev.pcvolkmer.mv64e.model;
 
-import java.util.Objects;
-import java.util.Map;
-import java.util.HashMap;
-import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonTypeName;
-import com.fasterxml.jackson.annotation.JsonValue;
 import java.math.BigDecimal;
-import java.util.Arrays;
+import java.util.Objects;
 import org.jspecify.annotations.Nullable;
-
 
 public class CnvEndRange {
   public static final String JSON_PROPERTY_START = "start";
-  
+
   private BigDecimal start;
 
   public static final String JSON_PROPERTY_END = "end";
-  
+
   private @Nullable BigDecimal end;
 
-  public CnvEndRange() { 
-  }
+  public CnvEndRange() {}
 
   public CnvEndRange start(BigDecimal start) {
     this.start = start;
     return this;
   }
 
-  
   @JsonProperty(value = JSON_PROPERTY_START, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public BigDecimal getStart() {
     return start;
   }
 
-
   @JsonProperty(value = JSON_PROPERTY_START, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setStart(BigDecimal start) {
     this.start = start;
   }
-
 
   public CnvEndRange end(@Nullable BigDecimal end) {
     this.end = end;
     return this;
   }
 
-  
   @JsonProperty(value = JSON_PROPERTY_END, required = false)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public @Nullable BigDecimal getEnd() {
     return end;
   }
 
-
   @JsonProperty(value = JSON_PROPERTY_END, required = false)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setEnd(@Nullable BigDecimal end) {
     this.end = end;
   }
-
 
   @Override
   public boolean equals(Object o) {
@@ -76,8 +55,8 @@ public class CnvEndRange {
       return false;
     }
     CnvEndRange cnvEndRange = (CnvEndRange) o;
-    return Objects.equals(this.start, cnvEndRange.start) &&
-        Objects.equals(this.end, cnvEndRange.end);
+    return Objects.equals(this.start, cnvEndRange.start)
+        && Objects.equals(this.end, cnvEndRange.end);
   }
 
   @Override
@@ -99,7 +78,7 @@ public class CnvEndRange {
     return o == null ? "null" : o.toString().replace("\n", "\n    ");
   }
 
-    public static class Builder {
+  public static class Builder {
 
     private CnvEndRange instance;
 
@@ -115,11 +94,11 @@ public class CnvEndRange {
       this.instance.start = start;
       return this;
     }
+
     public CnvEndRange.Builder end(BigDecimal end) {
       this.instance.end = end;
       return this;
     }
-
 
     public CnvEndRange build() {
       try {
@@ -141,10 +120,6 @@ public class CnvEndRange {
   }
 
   public CnvEndRange.Builder toBuilder() {
-    return new CnvEndRange.Builder()
-      .start(getStart())
-      .end(getEnd());
+    return new CnvEndRange.Builder().start(getStart()).end(getEnd());
   }
-
 }
-

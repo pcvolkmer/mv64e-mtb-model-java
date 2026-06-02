@@ -1,22 +1,13 @@
-
-
 package dev.pcvolkmer.mv64e.model;
-
-import java.util.Objects;
-import java.util.Map;
-import java.util.HashMap;
-import org.jspecify.annotations.Nullable;
-
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 
 public enum ModelProjectConsentPurpose {
-  
   CASE_IDENTIFICATION("case-identification"),
-  
+
   REIDENTIFICATION("reidentification"),
-  
+
   SEQUENCING("sequencing");
 
   private String value;
@@ -44,6 +35,4 @@ public enum ModelProjectConsentPurpose {
     }
     throw new IllegalArgumentException("Unexpected value '" + value + "'");
   }
-
 }
-

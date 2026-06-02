@@ -1,31 +1,23 @@
-
-
 package dev.pcvolkmer.mv64e.model;
 
-import java.util.Objects;
-import java.util.Map;
-import java.util.HashMap;
-import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonTypeName;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.Arrays;
+import java.util.Objects;
 import org.jspecify.annotations.Nullable;
-
 
 public class AtcUnregisteredMedicationCoding {
   public static final String JSON_PROPERTY_CODE = "code";
-  
+
   private String code;
 
   public static final String JSON_PROPERTY_DISPLAY = "display";
-  
+
   private @Nullable String display;
 
   public enum SystemEnum {
     UNDEFINED(String.valueOf("undefined")),
-    
+
     HTTP_FHIR_DE_CODE_SYSTEM_BFARM_ATC(String.valueOf("http://fhir.de/CodeSystem/bfarm/atc"));
 
     private String value;
@@ -56,95 +48,74 @@ public class AtcUnregisteredMedicationCoding {
   }
 
   public static final String JSON_PROPERTY_SYSTEM = "system";
-  
+
   private SystemEnum system;
 
   public static final String JSON_PROPERTY_VERSION = "version";
-  
+
   private @Nullable String version;
 
-  public AtcUnregisteredMedicationCoding() { 
-  }
+  public AtcUnregisteredMedicationCoding() {}
 
   public AtcUnregisteredMedicationCoding code(String code) {
     this.code = code;
     return this;
   }
 
-  
   @JsonProperty(value = JSON_PROPERTY_CODE, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public String getCode() {
     return code;
   }
 
-
   @JsonProperty(value = JSON_PROPERTY_CODE, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setCode(String code) {
     this.code = code;
   }
-
 
   public AtcUnregisteredMedicationCoding display(@Nullable String display) {
     this.display = display;
     return this;
   }
 
-  
   @JsonProperty(value = JSON_PROPERTY_DISPLAY, required = false)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public @Nullable String getDisplay() {
     return display;
   }
 
-
   @JsonProperty(value = JSON_PROPERTY_DISPLAY, required = false)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setDisplay(@Nullable String display) {
     this.display = display;
   }
-
 
   public AtcUnregisteredMedicationCoding system(SystemEnum system) {
     this.system = system;
     return this;
   }
 
-  
   @JsonProperty(value = JSON_PROPERTY_SYSTEM, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public SystemEnum getSystem() {
     return system;
   }
 
-
   @JsonProperty(value = JSON_PROPERTY_SYSTEM, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setSystem(SystemEnum system) {
     this.system = system;
   }
-
 
   public AtcUnregisteredMedicationCoding version(@Nullable String version) {
     this.version = version;
     return this;
   }
 
-  
   @JsonProperty(value = JSON_PROPERTY_VERSION, required = false)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public @Nullable String getVersion() {
     return version;
   }
 
-
   @JsonProperty(value = JSON_PROPERTY_VERSION, required = false)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setVersion(@Nullable String version) {
     this.version = version;
   }
-
 
   @Override
   public boolean equals(Object o) {
@@ -154,11 +125,12 @@ public class AtcUnregisteredMedicationCoding {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    AtcUnregisteredMedicationCoding atcUnregisteredMedicationCoding = (AtcUnregisteredMedicationCoding) o;
-    return Objects.equals(this.code, atcUnregisteredMedicationCoding.code) &&
-        Objects.equals(this.display, atcUnregisteredMedicationCoding.display) &&
-        Objects.equals(this.system, atcUnregisteredMedicationCoding.system) &&
-        Objects.equals(this.version, atcUnregisteredMedicationCoding.version);
+    AtcUnregisteredMedicationCoding atcUnregisteredMedicationCoding =
+        (AtcUnregisteredMedicationCoding) o;
+    return Objects.equals(this.code, atcUnregisteredMedicationCoding.code)
+        && Objects.equals(this.display, atcUnregisteredMedicationCoding.display)
+        && Objects.equals(this.system, atcUnregisteredMedicationCoding.system)
+        && Objects.equals(this.version, atcUnregisteredMedicationCoding.version);
   }
 
   @Override
@@ -182,7 +154,7 @@ public class AtcUnregisteredMedicationCoding {
     return o == null ? "null" : o.toString().replace("\n", "\n    ");
   }
 
-    public static class Builder {
+  public static class Builder {
 
     private AtcUnregisteredMedicationCoding instance;
 
@@ -198,19 +170,21 @@ public class AtcUnregisteredMedicationCoding {
       this.instance.code = code;
       return this;
     }
+
     public AtcUnregisteredMedicationCoding.Builder display(String display) {
       this.instance.display = display;
       return this;
     }
+
     public AtcUnregisteredMedicationCoding.Builder system(SystemEnum system) {
       this.instance.system = system;
       return this;
     }
+
     public AtcUnregisteredMedicationCoding.Builder version(String version) {
       this.instance.version = version;
       return this;
     }
-
 
     public AtcUnregisteredMedicationCoding build() {
       try {
@@ -233,11 +207,9 @@ public class AtcUnregisteredMedicationCoding {
 
   public AtcUnregisteredMedicationCoding.Builder toBuilder() {
     return new AtcUnregisteredMedicationCoding.Builder()
-      .code(getCode())
-      .display(getDisplay())
-      .system(getSystem())
-      .version(getVersion());
+        .code(getCode())
+        .display(getDisplay())
+        .system(getSystem())
+        .version(getVersion());
   }
-
 }
-

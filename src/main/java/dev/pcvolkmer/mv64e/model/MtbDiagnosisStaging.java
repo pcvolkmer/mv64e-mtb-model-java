@@ -1,29 +1,16 @@
-
-
 package dev.pcvolkmer.mv64e.model;
 
-import java.util.Objects;
-import java.util.Map;
-import java.util.HashMap;
-import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonTypeName;
-import com.fasterxml.jackson.annotation.JsonValue;
-import dev.pcvolkmer.mv64e.model.TumorStaging;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
-import org.jspecify.annotations.Nullable;
-
+import java.util.Objects;
 
 public class MtbDiagnosisStaging {
   public static final String JSON_PROPERTY_HISTORY = "history";
-  
+
   private List<TumorStaging> history;
 
-  public MtbDiagnosisStaging() { 
-  }
+  public MtbDiagnosisStaging() {}
 
   public MtbDiagnosisStaging history(List<TumorStaging> history) {
     this.history = history;
@@ -38,20 +25,15 @@ public class MtbDiagnosisStaging {
     return this;
   }
 
-  
   @JsonProperty(value = JSON_PROPERTY_HISTORY, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public List<TumorStaging> getHistory() {
     return history;
   }
 
-
   @JsonProperty(value = JSON_PROPERTY_HISTORY, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setHistory(List<TumorStaging> history) {
     this.history = history;
   }
-
 
   @Override
   public boolean equals(Object o) {
@@ -83,7 +65,7 @@ public class MtbDiagnosisStaging {
     return o == null ? "null" : o.toString().replace("\n", "\n    ");
   }
 
-    public static class Builder {
+  public static class Builder {
 
     private MtbDiagnosisStaging instance;
 
@@ -99,7 +81,6 @@ public class MtbDiagnosisStaging {
       this.instance.history = history;
       return this;
     }
-
 
     public MtbDiagnosisStaging build() {
       try {
@@ -121,9 +102,6 @@ public class MtbDiagnosisStaging {
   }
 
   public MtbDiagnosisStaging.Builder toBuilder() {
-    return new MtbDiagnosisStaging.Builder()
-      .history(getHistory());
+    return new MtbDiagnosisStaging.Builder().history(getHistory());
   }
-
 }
-

@@ -1,27 +1,19 @@
-
-
 package dev.pcvolkmer.mv64e.model;
 
-import java.util.Objects;
-import java.util.Map;
-import java.util.HashMap;
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonTypeName;
 import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.Arrays;
-import org.jspecify.annotations.Nullable;
-
+import java.util.Objects;
 
 public class TranscriptId {
   public static final String JSON_PROPERTY_VALUE = "value";
-  
+
   private String value;
 
   public enum SystemEnum {
     HTTPS_WWW_NCBI_NLM_NIH_GOV_REFSEQ(String.valueOf("https://www.ncbi.nlm.nih.gov/refseq")),
-    
+
     HTTPS_WWW_ENSEMBL_ORG(String.valueOf("https://www.ensembl.org"));
 
     private String value;
@@ -52,51 +44,44 @@ public class TranscriptId {
   }
 
   public static final String JSON_PROPERTY_SYSTEM = "system";
-  
+
   private SystemEnum system;
 
-  public TranscriptId() { 
-  }
+  public TranscriptId() {}
 
   public TranscriptId value(String value) {
     this.value = value;
     return this;
   }
 
-  
   @JsonProperty(value = JSON_PROPERTY_VALUE, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public String getValue() {
     return value;
   }
 
-
   @JsonProperty(value = JSON_PROPERTY_VALUE, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setValue(String value) {
     this.value = value;
   }
-
 
   public TranscriptId system(SystemEnum system) {
     this.system = system;
     return this;
   }
 
-  
   @JsonProperty(value = JSON_PROPERTY_SYSTEM, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public SystemEnum getSystem() {
     return system;
   }
 
-
   @JsonProperty(value = JSON_PROPERTY_SYSTEM, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setSystem(SystemEnum system) {
     this.system = system;
   }
-
 
   @Override
   public boolean equals(Object o) {
@@ -107,8 +92,8 @@ public class TranscriptId {
       return false;
     }
     TranscriptId transcriptId = (TranscriptId) o;
-    return Objects.equals(this.value, transcriptId.value) &&
-        Objects.equals(this.system, transcriptId.system);
+    return Objects.equals(this.value, transcriptId.value)
+        && Objects.equals(this.system, transcriptId.system);
   }
 
   @Override
@@ -130,7 +115,7 @@ public class TranscriptId {
     return o == null ? "null" : o.toString().replace("\n", "\n    ");
   }
 
-    public static class Builder {
+  public static class Builder {
 
     private TranscriptId instance;
 
@@ -146,11 +131,11 @@ public class TranscriptId {
       this.instance.value = value;
       return this;
     }
+
     public TranscriptId.Builder system(SystemEnum system) {
       this.instance.system = system;
       return this;
     }
-
 
     public TranscriptId build() {
       try {
@@ -172,10 +157,6 @@ public class TranscriptId {
   }
 
   public TranscriptId.Builder toBuilder() {
-    return new TranscriptId.Builder()
-      .value(getValue())
-      .system(getSystem());
+    return new TranscriptId.Builder().value(getValue()).system(getSystem());
   }
-
 }
-

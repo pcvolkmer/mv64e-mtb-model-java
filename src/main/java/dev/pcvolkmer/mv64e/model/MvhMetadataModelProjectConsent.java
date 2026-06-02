@@ -1,85 +1,66 @@
-
-
 package dev.pcvolkmer.mv64e.model;
 
-import java.util.Objects;
-import java.util.Map;
-import java.util.HashMap;
-import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonTypeName;
-import com.fasterxml.jackson.annotation.JsonValue;
-import dev.pcvolkmer.mv64e.model.MvhMetadataModelProjectConsentProvisionsInner;
+import com.fasterxml.jackson.annotation.*;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
+import java.util.Objects;
 import org.jspecify.annotations.Nullable;
-
 
 public class MvhMetadataModelProjectConsent {
   public static final String JSON_PROPERTY_VERSION = "version";
-  
+
   private String version;
 
   public static final String JSON_PROPERTY_DATE = "date";
-  
+
   private @Nullable Date date;
 
   public static final String JSON_PROPERTY_PROVISIONS = "provisions";
-  
+
   private List<MvhMetadataModelProjectConsentProvisionsInner> provisions;
 
-  public MvhMetadataModelProjectConsent() { 
-  }
+  public MvhMetadataModelProjectConsent() {}
 
   public MvhMetadataModelProjectConsent version(String version) {
     this.version = version;
     return this;
   }
 
-  
   @JsonProperty(value = JSON_PROPERTY_VERSION, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public String getVersion() {
     return version;
   }
 
-
   @JsonProperty(value = JSON_PROPERTY_VERSION, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setVersion(String version) {
     this.version = version;
   }
-
 
   public MvhMetadataModelProjectConsent date(@Nullable Date date) {
     this.date = date;
     return this;
   }
 
-  
   @JsonProperty(value = JSON_PROPERTY_DATE, required = false)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
   public @Nullable Date getDate() {
     return date;
   }
 
-
   @JsonProperty(value = JSON_PROPERTY_DATE, required = false)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setDate(@Nullable Date date) {
     this.date = date;
   }
 
-
-  public MvhMetadataModelProjectConsent provisions(List<MvhMetadataModelProjectConsentProvisionsInner> provisions) {
+  public MvhMetadataModelProjectConsent provisions(
+      List<MvhMetadataModelProjectConsentProvisionsInner> provisions) {
     this.provisions = provisions;
     return this;
   }
 
-  public MvhMetadataModelProjectConsent addProvisionsItem(MvhMetadataModelProjectConsentProvisionsInner provisionsItem) {
+  public MvhMetadataModelProjectConsent addProvisionsItem(
+      MvhMetadataModelProjectConsentProvisionsInner provisionsItem) {
     if (this.provisions == null) {
       this.provisions = new ArrayList<>();
     }
@@ -87,20 +68,15 @@ public class MvhMetadataModelProjectConsent {
     return this;
   }
 
-  
   @JsonProperty(value = JSON_PROPERTY_PROVISIONS, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public List<MvhMetadataModelProjectConsentProvisionsInner> getProvisions() {
     return provisions;
   }
 
-
   @JsonProperty(value = JSON_PROPERTY_PROVISIONS, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setProvisions(List<MvhMetadataModelProjectConsentProvisionsInner> provisions) {
     this.provisions = provisions;
   }
-
 
   @Override
   public boolean equals(Object o) {
@@ -110,10 +86,11 @@ public class MvhMetadataModelProjectConsent {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    MvhMetadataModelProjectConsent mvhMetadataModelProjectConsent = (MvhMetadataModelProjectConsent) o;
-    return Objects.equals(this.version, mvhMetadataModelProjectConsent.version) &&
-        Objects.equals(this.date, mvhMetadataModelProjectConsent.date) &&
-        Objects.equals(this.provisions, mvhMetadataModelProjectConsent.provisions);
+    MvhMetadataModelProjectConsent mvhMetadataModelProjectConsent =
+        (MvhMetadataModelProjectConsent) o;
+    return Objects.equals(this.version, mvhMetadataModelProjectConsent.version)
+        && Objects.equals(this.date, mvhMetadataModelProjectConsent.date)
+        && Objects.equals(this.provisions, mvhMetadataModelProjectConsent.provisions);
   }
 
   @Override
@@ -136,7 +113,7 @@ public class MvhMetadataModelProjectConsent {
     return o == null ? "null" : o.toString().replace("\n", "\n    ");
   }
 
-    public static class Builder {
+  public static class Builder {
 
     private MvhMetadataModelProjectConsent instance;
 
@@ -152,15 +129,17 @@ public class MvhMetadataModelProjectConsent {
       this.instance.version = version;
       return this;
     }
+
     public MvhMetadataModelProjectConsent.Builder date(Date date) {
       this.instance.date = date;
       return this;
     }
-    public MvhMetadataModelProjectConsent.Builder provisions(List<MvhMetadataModelProjectConsentProvisionsInner> provisions) {
+
+    public MvhMetadataModelProjectConsent.Builder provisions(
+        List<MvhMetadataModelProjectConsentProvisionsInner> provisions) {
       this.instance.provisions = provisions;
       return this;
     }
-
 
     public MvhMetadataModelProjectConsent build() {
       try {
@@ -183,10 +162,8 @@ public class MvhMetadataModelProjectConsent {
 
   public MvhMetadataModelProjectConsent.Builder toBuilder() {
     return new MvhMetadataModelProjectConsent.Builder()
-      .version(getVersion())
-      .date(getDate())
-      .provisions(getProvisions());
+        .version(getVersion())
+        .date(getDate())
+        .provisions(getProvisions());
   }
-
 }
-

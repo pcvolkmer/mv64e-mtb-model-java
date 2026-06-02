@@ -1,219 +1,163 @@
-
-
 package dev.pcvolkmer.mv64e.model;
 
-import java.util.Objects;
-import java.util.Map;
-import java.util.HashMap;
-import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonTypeName;
-import com.fasterxml.jackson.annotation.JsonValue;
-import dev.pcvolkmer.mv64e.model.Coding;
-import dev.pcvolkmer.mv64e.model.ProteinExpressionIcScoreCoding;
-import dev.pcvolkmer.mv64e.model.ProteinExpressionResultCoding;
-import dev.pcvolkmer.mv64e.model.ProteinExpressionTcScoreCoding;
-import dev.pcvolkmer.mv64e.model.Reference;
-import java.util.Arrays;
+import java.util.Objects;
 import org.jspecify.annotations.Nullable;
-
 
 public class ProteinExpression {
   public static final String JSON_PROPERTY_CPS_SCORE = "cpsScore";
-  
+
   private @Nullable Integer cpsScore;
 
   public static final String JSON_PROPERTY_IC_SCORE = "icScore";
-  
+
   private @Nullable ProteinExpressionIcScoreCoding icScore;
 
   public static final String JSON_PROPERTY_VALUE = "value";
-  
+
   private ProteinExpressionResultCoding value;
 
   public static final String JSON_PROPERTY_PATIENT = "patient";
-  
+
   private Reference patient;
 
   public static final String JSON_PROPERTY_PROTEIN = "protein";
-  
+
   private Coding protein;
 
   public static final String JSON_PROPERTY_TC_SCORE = "tcScore";
-  
+
   private @Nullable ProteinExpressionTcScoreCoding tcScore;
 
   public static final String JSON_PROPERTY_TPS_SCORE = "tpsScore";
-  
+
   private @Nullable Integer tpsScore;
 
   public static final String JSON_PROPERTY_ID = "id";
-  
+
   private String id;
 
-  public ProteinExpression() { 
-  }
+  public ProteinExpression() {}
 
   public ProteinExpression cpsScore(@Nullable Integer cpsScore) {
     this.cpsScore = cpsScore;
     return this;
   }
 
-  
   @JsonProperty(value = JSON_PROPERTY_CPS_SCORE, required = false)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public @Nullable Integer getCpsScore() {
     return cpsScore;
   }
 
-
   @JsonProperty(value = JSON_PROPERTY_CPS_SCORE, required = false)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setCpsScore(@Nullable Integer cpsScore) {
     this.cpsScore = cpsScore;
   }
-
 
   public ProteinExpression icScore(@Nullable ProteinExpressionIcScoreCoding icScore) {
     this.icScore = icScore;
     return this;
   }
 
-  
   @JsonProperty(value = JSON_PROPERTY_IC_SCORE, required = false)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public @Nullable ProteinExpressionIcScoreCoding getIcScore() {
     return icScore;
   }
 
-
   @JsonProperty(value = JSON_PROPERTY_IC_SCORE, required = false)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setIcScore(@Nullable ProteinExpressionIcScoreCoding icScore) {
     this.icScore = icScore;
   }
-
 
   public ProteinExpression value(ProteinExpressionResultCoding value) {
     this.value = value;
     return this;
   }
 
-  
   @JsonProperty(value = JSON_PROPERTY_VALUE, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public ProteinExpressionResultCoding getValue() {
     return value;
   }
 
-
   @JsonProperty(value = JSON_PROPERTY_VALUE, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setValue(ProteinExpressionResultCoding value) {
     this.value = value;
   }
-
 
   public ProteinExpression patient(Reference patient) {
     this.patient = patient;
     return this;
   }
 
-  
   @JsonProperty(value = JSON_PROPERTY_PATIENT, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public Reference getPatient() {
     return patient;
   }
 
-
   @JsonProperty(value = JSON_PROPERTY_PATIENT, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setPatient(Reference patient) {
     this.patient = patient;
   }
-
 
   public ProteinExpression protein(Coding protein) {
     this.protein = protein;
     return this;
   }
 
-  
   @JsonProperty(value = JSON_PROPERTY_PROTEIN, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public Coding getProtein() {
     return protein;
   }
 
-
   @JsonProperty(value = JSON_PROPERTY_PROTEIN, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setProtein(Coding protein) {
     this.protein = protein;
   }
-
 
   public ProteinExpression tcScore(@Nullable ProteinExpressionTcScoreCoding tcScore) {
     this.tcScore = tcScore;
     return this;
   }
 
-  
   @JsonProperty(value = JSON_PROPERTY_TC_SCORE, required = false)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public @Nullable ProteinExpressionTcScoreCoding getTcScore() {
     return tcScore;
   }
 
-
   @JsonProperty(value = JSON_PROPERTY_TC_SCORE, required = false)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setTcScore(@Nullable ProteinExpressionTcScoreCoding tcScore) {
     this.tcScore = tcScore;
   }
-
 
   public ProteinExpression tpsScore(@Nullable Integer tpsScore) {
     this.tpsScore = tpsScore;
     return this;
   }
 
-  
   @JsonProperty(value = JSON_PROPERTY_TPS_SCORE, required = false)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public @Nullable Integer getTpsScore() {
     return tpsScore;
   }
 
-
   @JsonProperty(value = JSON_PROPERTY_TPS_SCORE, required = false)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setTpsScore(@Nullable Integer tpsScore) {
     this.tpsScore = tpsScore;
   }
-
 
   public ProteinExpression id(String id) {
     this.id = id;
     return this;
   }
 
-  
   @JsonProperty(value = JSON_PROPERTY_ID, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public String getId() {
     return id;
   }
 
-
   @JsonProperty(value = JSON_PROPERTY_ID, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setId(String id) {
     this.id = id;
   }
-
 
   @Override
   public boolean equals(Object o) {
@@ -224,14 +168,14 @@ public class ProteinExpression {
       return false;
     }
     ProteinExpression proteinExpression = (ProteinExpression) o;
-    return Objects.equals(this.cpsScore, proteinExpression.cpsScore) &&
-        Objects.equals(this.icScore, proteinExpression.icScore) &&
-        Objects.equals(this.value, proteinExpression.value) &&
-        Objects.equals(this.patient, proteinExpression.patient) &&
-        Objects.equals(this.protein, proteinExpression.protein) &&
-        Objects.equals(this.tcScore, proteinExpression.tcScore) &&
-        Objects.equals(this.tpsScore, proteinExpression.tpsScore) &&
-        Objects.equals(this.id, proteinExpression.id);
+    return Objects.equals(this.cpsScore, proteinExpression.cpsScore)
+        && Objects.equals(this.icScore, proteinExpression.icScore)
+        && Objects.equals(this.value, proteinExpression.value)
+        && Objects.equals(this.patient, proteinExpression.patient)
+        && Objects.equals(this.protein, proteinExpression.protein)
+        && Objects.equals(this.tcScore, proteinExpression.tcScore)
+        && Objects.equals(this.tpsScore, proteinExpression.tpsScore)
+        && Objects.equals(this.id, proteinExpression.id);
   }
 
   @Override
@@ -259,7 +203,7 @@ public class ProteinExpression {
     return o == null ? "null" : o.toString().replace("\n", "\n    ");
   }
 
-    public static class Builder {
+  public static class Builder {
 
     private ProteinExpression instance;
 
@@ -275,35 +219,41 @@ public class ProteinExpression {
       this.instance.cpsScore = cpsScore;
       return this;
     }
+
     public ProteinExpression.Builder icScore(ProteinExpressionIcScoreCoding icScore) {
       this.instance.icScore = icScore;
       return this;
     }
+
     public ProteinExpression.Builder value(ProteinExpressionResultCoding value) {
       this.instance.value = value;
       return this;
     }
+
     public ProteinExpression.Builder patient(Reference patient) {
       this.instance.patient = patient;
       return this;
     }
+
     public ProteinExpression.Builder protein(Coding protein) {
       this.instance.protein = protein;
       return this;
     }
+
     public ProteinExpression.Builder tcScore(ProteinExpressionTcScoreCoding tcScore) {
       this.instance.tcScore = tcScore;
       return this;
     }
+
     public ProteinExpression.Builder tpsScore(Integer tpsScore) {
       this.instance.tpsScore = tpsScore;
       return this;
     }
+
     public ProteinExpression.Builder id(String id) {
       this.instance.id = id;
       return this;
     }
-
 
     public ProteinExpression build() {
       try {
@@ -326,15 +276,13 @@ public class ProteinExpression {
 
   public ProteinExpression.Builder toBuilder() {
     return new ProteinExpression.Builder()
-      .cpsScore(getCpsScore())
-      .icScore(getIcScore())
-      .value(getValue())
-      .patient(getPatient())
-      .protein(getProtein())
-      .tcScore(getTcScore())
-      .tpsScore(getTpsScore())
-      .id(getId());
+        .cpsScore(getCpsScore())
+        .icScore(getIcScore())
+        .value(getValue())
+        .patient(getPatient())
+        .protein(getProtein())
+        .tcScore(getTcScore())
+        .tpsScore(getTpsScore())
+        .id(getId());
   }
-
 }
-

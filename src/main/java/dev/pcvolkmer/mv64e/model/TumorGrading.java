@@ -1,54 +1,39 @@
-
-
 package dev.pcvolkmer.mv64e.model;
 
-import java.util.Objects;
-import java.util.Map;
-import java.util.HashMap;
-import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonTypeName;
-import com.fasterxml.jackson.annotation.JsonValue;
-import dev.pcvolkmer.mv64e.model.Coding;
+import com.fasterxml.jackson.annotation.*;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
-import org.jspecify.annotations.Nullable;
-
+import java.util.Objects;
 
 public class TumorGrading {
   public static final String JSON_PROPERTY_DATE = "date";
-  
+
   private Date date;
 
   public static final String JSON_PROPERTY_CODES = "codes";
-  
+
   private List<Coding> codes;
 
-  public TumorGrading() { 
-  }
+  public TumorGrading() {}
 
   public TumorGrading date(Date date) {
     this.date = date;
     return this;
   }
 
-  
   @JsonProperty(value = JSON_PROPERTY_DATE, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
+  @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
   public Date getDate() {
     return date;
   }
 
-
   @JsonProperty(value = JSON_PROPERTY_DATE, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setDate(Date date) {
     this.date = date;
   }
-
 
   public TumorGrading codes(List<Coding> codes) {
     this.codes = codes;
@@ -63,20 +48,17 @@ public class TumorGrading {
     return this;
   }
 
-  
   @JsonProperty(value = JSON_PROPERTY_CODES, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public List<Coding> getCodes() {
     return codes;
   }
 
-
   @JsonProperty(value = JSON_PROPERTY_CODES, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setCodes(List<Coding> codes) {
     this.codes = codes;
   }
-
 
   @Override
   public boolean equals(Object o) {
@@ -87,8 +69,8 @@ public class TumorGrading {
       return false;
     }
     TumorGrading tumorGrading = (TumorGrading) o;
-    return Objects.equals(this.date, tumorGrading.date) &&
-        Objects.equals(this.codes, tumorGrading.codes);
+    return Objects.equals(this.date, tumorGrading.date)
+        && Objects.equals(this.codes, tumorGrading.codes);
   }
 
   @Override
@@ -110,7 +92,7 @@ public class TumorGrading {
     return o == null ? "null" : o.toString().replace("\n", "\n    ");
   }
 
-    public static class Builder {
+  public static class Builder {
 
     private TumorGrading instance;
 
@@ -126,11 +108,11 @@ public class TumorGrading {
       this.instance.date = date;
       return this;
     }
+
     public TumorGrading.Builder codes(List<Coding> codes) {
       this.instance.codes = codes;
       return this;
     }
-
 
     public TumorGrading build() {
       try {
@@ -152,10 +134,6 @@ public class TumorGrading {
   }
 
   public TumorGrading.Builder toBuilder() {
-    return new TumorGrading.Builder()
-      .date(getDate())
-      .codes(getCodes());
+    return new TumorGrading.Builder().date(getDate()).codes(getCodes());
   }
-
 }
-

@@ -1,71 +1,49 @@
-
-
 package dev.pcvolkmer.mv64e.model;
 
-import java.util.Objects;
-import java.util.Map;
-import java.util.HashMap;
-import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonTypeName;
-import com.fasterxml.jackson.annotation.JsonValue;
 import java.math.BigDecimal;
-import java.util.Arrays;
-import org.jspecify.annotations.Nullable;
-
+import java.util.Objects;
 
 public class BrcanessConfidenceRange {
   public static final String JSON_PROPERTY_MIN = "min";
-  
+
   private BigDecimal min;
 
   public static final String JSON_PROPERTY_MAX = "max";
-  
+
   private BigDecimal max;
 
-  public BrcanessConfidenceRange() { 
-  }
+  public BrcanessConfidenceRange() {}
 
   public BrcanessConfidenceRange min(BigDecimal min) {
     this.min = min;
     return this;
   }
 
-  
   @JsonProperty(value = JSON_PROPERTY_MIN, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public BigDecimal getMin() {
     return min;
   }
 
-
   @JsonProperty(value = JSON_PROPERTY_MIN, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setMin(BigDecimal min) {
     this.min = min;
   }
-
 
   public BrcanessConfidenceRange max(BigDecimal max) {
     this.max = max;
     return this;
   }
 
-  
   @JsonProperty(value = JSON_PROPERTY_MAX, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public BigDecimal getMax() {
     return max;
   }
 
-
   @JsonProperty(value = JSON_PROPERTY_MAX, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setMax(BigDecimal max) {
     this.max = max;
   }
-
 
   @Override
   public boolean equals(Object o) {
@@ -76,8 +54,8 @@ public class BrcanessConfidenceRange {
       return false;
     }
     BrcanessConfidenceRange brcanessConfidenceRange = (BrcanessConfidenceRange) o;
-    return Objects.equals(this.min, brcanessConfidenceRange.min) &&
-        Objects.equals(this.max, brcanessConfidenceRange.max);
+    return Objects.equals(this.min, brcanessConfidenceRange.min)
+        && Objects.equals(this.max, brcanessConfidenceRange.max);
   }
 
   @Override
@@ -99,7 +77,7 @@ public class BrcanessConfidenceRange {
     return o == null ? "null" : o.toString().replace("\n", "\n    ");
   }
 
-    public static class Builder {
+  public static class Builder {
 
     private BrcanessConfidenceRange instance;
 
@@ -115,11 +93,11 @@ public class BrcanessConfidenceRange {
       this.instance.min = min;
       return this;
     }
+
     public BrcanessConfidenceRange.Builder max(BigDecimal max) {
       this.instance.max = max;
       return this;
     }
-
 
     public BrcanessConfidenceRange build() {
       try {
@@ -141,10 +119,6 @@ public class BrcanessConfidenceRange {
   }
 
   public BrcanessConfidenceRange.Builder toBuilder() {
-    return new BrcanessConfidenceRange.Builder()
-      .min(getMin())
-      .max(getMax());
+    return new BrcanessConfidenceRange.Builder().min(getMin()).max(getMax());
   }
-
 }
-

@@ -1,71 +1,55 @@
-
-
 package dev.pcvolkmer.mv64e.model;
 
-import java.util.Objects;
-import java.util.Map;
-import java.util.HashMap;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonTypeName;
-import com.fasterxml.jackson.annotation.JsonValue;
 import java.math.BigDecimal;
-import java.util.Arrays;
+import java.util.Objects;
 import org.jspecify.annotations.Nullable;
-
 
 public class TmbResult {
   public static final String JSON_PROPERTY_VALUE = "value";
-  
+
   private BigDecimal value;
 
   public static final String JSON_PROPERTY_UNIT = "unit";
-  
+
   private @Nullable String unit;
 
-  public TmbResult() { 
-  }
+  public TmbResult() {}
 
   public TmbResult value(BigDecimal value) {
     this.value = value;
     return this;
   }
 
-  
   @JsonProperty(value = JSON_PROPERTY_VALUE, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public BigDecimal getValue() {
     return value;
   }
 
-
   @JsonProperty(value = JSON_PROPERTY_VALUE, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
+  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setValue(BigDecimal value) {
     this.value = value;
   }
-
 
   public TmbResult unit(@Nullable String unit) {
     this.unit = unit;
     return this;
   }
 
-  
   @JsonProperty(value = JSON_PROPERTY_UNIT, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public @Nullable String getUnit() {
     return unit;
   }
 
-
   @JsonProperty(value = JSON_PROPERTY_UNIT, required = false)
   @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setUnit(@Nullable String unit) {
     this.unit = unit;
   }
-
 
   @Override
   public boolean equals(Object o) {
@@ -76,8 +60,7 @@ public class TmbResult {
       return false;
     }
     TmbResult tmbResult = (TmbResult) o;
-    return Objects.equals(this.value, tmbResult.value) &&
-        Objects.equals(this.unit, tmbResult.unit);
+    return Objects.equals(this.value, tmbResult.value) && Objects.equals(this.unit, tmbResult.unit);
   }
 
   @Override
@@ -99,7 +82,7 @@ public class TmbResult {
     return o == null ? "null" : o.toString().replace("\n", "\n    ");
   }
 
-    public static class Builder {
+  public static class Builder {
 
     private TmbResult instance;
 
@@ -115,11 +98,11 @@ public class TmbResult {
       this.instance.value = value;
       return this;
     }
+
     public TmbResult.Builder unit(String unit) {
       this.instance.unit = unit;
       return this;
     }
-
 
     public TmbResult build() {
       try {
@@ -141,10 +124,6 @@ public class TmbResult {
   }
 
   public TmbResult.Builder toBuilder() {
-    return new TmbResult.Builder()
-      .value(getValue())
-      .unit(getUnit());
+    return new TmbResult.Builder().value(getValue()).unit(getUnit());
   }
-
 }
-

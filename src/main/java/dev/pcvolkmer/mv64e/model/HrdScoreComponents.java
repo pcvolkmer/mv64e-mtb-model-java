@@ -1,95 +1,68 @@
-
-
 package dev.pcvolkmer.mv64e.model;
 
-import java.util.Objects;
-import java.util.Map;
-import java.util.HashMap;
-import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonTypeName;
-import com.fasterxml.jackson.annotation.JsonValue;
 import java.math.BigDecimal;
-import java.util.Arrays;
-import org.jspecify.annotations.Nullable;
-
+import java.util.Objects;
 
 public class HrdScoreComponents {
   public static final String JSON_PROPERTY_LST = "lst";
-  
+
   private BigDecimal lst;
 
   public static final String JSON_PROPERTY_LOH = "loh";
-  
+
   private BigDecimal loh;
 
   public static final String JSON_PROPERTY_TAI = "tai";
-  
+
   private BigDecimal tai;
 
-  public HrdScoreComponents() { 
-  }
+  public HrdScoreComponents() {}
 
   public HrdScoreComponents lst(BigDecimal lst) {
     this.lst = lst;
     return this;
   }
 
-  
   @JsonProperty(value = JSON_PROPERTY_LST, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public BigDecimal getLst() {
     return lst;
   }
 
-
   @JsonProperty(value = JSON_PROPERTY_LST, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setLst(BigDecimal lst) {
     this.lst = lst;
   }
-
 
   public HrdScoreComponents loh(BigDecimal loh) {
     this.loh = loh;
     return this;
   }
 
-  
   @JsonProperty(value = JSON_PROPERTY_LOH, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public BigDecimal getLoh() {
     return loh;
   }
 
-
   @JsonProperty(value = JSON_PROPERTY_LOH, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setLoh(BigDecimal loh) {
     this.loh = loh;
   }
-
 
   public HrdScoreComponents tai(BigDecimal tai) {
     this.tai = tai;
     return this;
   }
 
-  
   @JsonProperty(value = JSON_PROPERTY_TAI, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public BigDecimal getTai() {
     return tai;
   }
 
-
   @JsonProperty(value = JSON_PROPERTY_TAI, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setTai(BigDecimal tai) {
     this.tai = tai;
   }
-
 
   @Override
   public boolean equals(Object o) {
@@ -100,9 +73,9 @@ public class HrdScoreComponents {
       return false;
     }
     HrdScoreComponents hrdScoreComponents = (HrdScoreComponents) o;
-    return Objects.equals(this.lst, hrdScoreComponents.lst) &&
-        Objects.equals(this.loh, hrdScoreComponents.loh) &&
-        Objects.equals(this.tai, hrdScoreComponents.tai);
+    return Objects.equals(this.lst, hrdScoreComponents.lst)
+        && Objects.equals(this.loh, hrdScoreComponents.loh)
+        && Objects.equals(this.tai, hrdScoreComponents.tai);
   }
 
   @Override
@@ -125,7 +98,7 @@ public class HrdScoreComponents {
     return o == null ? "null" : o.toString().replace("\n", "\n    ");
   }
 
-    public static class Builder {
+  public static class Builder {
 
     private HrdScoreComponents instance;
 
@@ -141,15 +114,16 @@ public class HrdScoreComponents {
       this.instance.lst = lst;
       return this;
     }
+
     public HrdScoreComponents.Builder loh(BigDecimal loh) {
       this.instance.loh = loh;
       return this;
     }
+
     public HrdScoreComponents.Builder tai(BigDecimal tai) {
       this.instance.tai = tai;
       return this;
     }
-
 
     public HrdScoreComponents build() {
       try {
@@ -171,11 +145,6 @@ public class HrdScoreComponents {
   }
 
   public HrdScoreComponents.Builder toBuilder() {
-    return new HrdScoreComponents.Builder()
-      .lst(getLst())
-      .loh(getLoh())
-      .tai(getTai());
+    return new HrdScoreComponents.Builder().lst(getLst()).loh(getLoh()).tai(getTai());
   }
-
 }
-

@@ -1,33 +1,20 @@
-
-
 package dev.pcvolkmer.mv64e.model;
 
-import java.util.Objects;
-import java.util.Map;
-import java.util.HashMap;
-import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonTypeName;
-import com.fasterxml.jackson.annotation.JsonValue;
-import dev.pcvolkmer.mv64e.model.ProteinExpression;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
-import org.jspecify.annotations.Nullable;
-
+import java.util.Objects;
 
 public class IhcReportResults {
   public static final String JSON_PROPERTY_PROTEIN_EXPRESSION = "proteinExpression";
-  
+
   private List<ProteinExpression> proteinExpression;
 
   public static final String JSON_PROPERTY_MSI_MMR = "msiMmr";
-  
+
   private List<ProteinExpression> msiMmr;
 
-  public IhcReportResults() { 
-  }
+  public IhcReportResults() {}
 
   public IhcReportResults proteinExpression(List<ProteinExpression> proteinExpression) {
     this.proteinExpression = proteinExpression;
@@ -42,20 +29,15 @@ public class IhcReportResults {
     return this;
   }
 
-  
   @JsonProperty(value = JSON_PROPERTY_PROTEIN_EXPRESSION, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public List<ProteinExpression> getProteinExpression() {
     return proteinExpression;
   }
 
-
   @JsonProperty(value = JSON_PROPERTY_PROTEIN_EXPRESSION, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setProteinExpression(List<ProteinExpression> proteinExpression) {
     this.proteinExpression = proteinExpression;
   }
-
 
   public IhcReportResults msiMmr(List<ProteinExpression> msiMmr) {
     this.msiMmr = msiMmr;
@@ -70,20 +52,15 @@ public class IhcReportResults {
     return this;
   }
 
-  
   @JsonProperty(value = JSON_PROPERTY_MSI_MMR, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public List<ProteinExpression> getMsiMmr() {
     return msiMmr;
   }
 
-
   @JsonProperty(value = JSON_PROPERTY_MSI_MMR, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setMsiMmr(List<ProteinExpression> msiMmr) {
     this.msiMmr = msiMmr;
   }
-
 
   @Override
   public boolean equals(Object o) {
@@ -94,8 +71,8 @@ public class IhcReportResults {
       return false;
     }
     IhcReportResults ihcReportResults = (IhcReportResults) o;
-    return Objects.equals(this.proteinExpression, ihcReportResults.proteinExpression) &&
-        Objects.equals(this.msiMmr, ihcReportResults.msiMmr);
+    return Objects.equals(this.proteinExpression, ihcReportResults.proteinExpression)
+        && Objects.equals(this.msiMmr, ihcReportResults.msiMmr);
   }
 
   @Override
@@ -117,7 +94,7 @@ public class IhcReportResults {
     return o == null ? "null" : o.toString().replace("\n", "\n    ");
   }
 
-    public static class Builder {
+  public static class Builder {
 
     private IhcReportResults instance;
 
@@ -133,11 +110,11 @@ public class IhcReportResults {
       this.instance.proteinExpression = proteinExpression;
       return this;
     }
+
     public IhcReportResults.Builder msiMmr(List<ProteinExpression> msiMmr) {
       this.instance.msiMmr = msiMmr;
       return this;
     }
-
 
     public IhcReportResults build() {
       try {
@@ -160,9 +137,7 @@ public class IhcReportResults {
 
   public IhcReportResults.Builder toBuilder() {
     return new IhcReportResults.Builder()
-      .proteinExpression(getProteinExpression())
-      .msiMmr(getMsiMmr());
+        .proteinExpression(getProteinExpression())
+        .msiMmr(getMsiMmr());
   }
-
 }
-

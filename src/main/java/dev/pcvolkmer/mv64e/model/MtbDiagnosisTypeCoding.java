@@ -1,25 +1,17 @@
-
-
 package dev.pcvolkmer.mv64e.model;
 
-import java.util.Objects;
-import java.util.Map;
-import java.util.HashMap;
-import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonTypeName;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonValue;
-import java.util.Arrays;
+import java.util.Objects;
 import org.jspecify.annotations.Nullable;
-
 
 public class MtbDiagnosisTypeCoding {
   public enum CodeEnum {
     MAIN(String.valueOf("main")),
-    
+
     METACHRONOUS(String.valueOf("metachronous")),
-    
+
     SECONDARY(String.valueOf("secondary"));
 
     private String value;
@@ -50,103 +42,82 @@ public class MtbDiagnosisTypeCoding {
   }
 
   public static final String JSON_PROPERTY_CODE = "code";
-  
+
   private CodeEnum code;
 
   public static final String JSON_PROPERTY_DISPLAY = "display";
-  
+
   private @Nullable String display;
 
   public static final String JSON_PROPERTY_SYSTEM = "system";
-  
+
   private @Nullable String system;
 
   public static final String JSON_PROPERTY_VERSION = "version";
-  
+
   private @Nullable String version;
 
-  public MtbDiagnosisTypeCoding() { 
-  }
+  public MtbDiagnosisTypeCoding() {}
 
   public MtbDiagnosisTypeCoding code(CodeEnum code) {
     this.code = code;
     return this;
   }
 
-  
   @JsonProperty(value = JSON_PROPERTY_CODE, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public CodeEnum getCode() {
     return code;
   }
 
-
   @JsonProperty(value = JSON_PROPERTY_CODE, required = true)
-  @JsonInclude(value = JsonInclude.Include.ALWAYS)
   public void setCode(CodeEnum code) {
     this.code = code;
   }
-
 
   public MtbDiagnosisTypeCoding display(@Nullable String display) {
     this.display = display;
     return this;
   }
 
-  
   @JsonProperty(value = JSON_PROPERTY_DISPLAY, required = false)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public @Nullable String getDisplay() {
     return display;
   }
 
-
   @JsonProperty(value = JSON_PROPERTY_DISPLAY, required = false)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setDisplay(@Nullable String display) {
     this.display = display;
   }
-
 
   public MtbDiagnosisTypeCoding system(@Nullable String system) {
     this.system = system;
     return this;
   }
 
-  
   @JsonProperty(value = JSON_PROPERTY_SYSTEM, required = false)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public @Nullable String getSystem() {
     return system;
   }
 
-
   @JsonProperty(value = JSON_PROPERTY_SYSTEM, required = false)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setSystem(@Nullable String system) {
     this.system = system;
   }
-
 
   public MtbDiagnosisTypeCoding version(@Nullable String version) {
     this.version = version;
     return this;
   }
 
-  
   @JsonProperty(value = JSON_PROPERTY_VERSION, required = false)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public @Nullable String getVersion() {
     return version;
   }
 
-
   @JsonProperty(value = JSON_PROPERTY_VERSION, required = false)
-  @JsonInclude(value = JsonInclude.Include.USE_DEFAULTS)
   public void setVersion(@Nullable String version) {
     this.version = version;
   }
-
 
   @Override
   public boolean equals(Object o) {
@@ -157,10 +128,10 @@ public class MtbDiagnosisTypeCoding {
       return false;
     }
     MtbDiagnosisTypeCoding mtbDiagnosisTypeCoding = (MtbDiagnosisTypeCoding) o;
-    return Objects.equals(this.code, mtbDiagnosisTypeCoding.code) &&
-        Objects.equals(this.display, mtbDiagnosisTypeCoding.display) &&
-        Objects.equals(this.system, mtbDiagnosisTypeCoding.system) &&
-        Objects.equals(this.version, mtbDiagnosisTypeCoding.version);
+    return Objects.equals(this.code, mtbDiagnosisTypeCoding.code)
+        && Objects.equals(this.display, mtbDiagnosisTypeCoding.display)
+        && Objects.equals(this.system, mtbDiagnosisTypeCoding.system)
+        && Objects.equals(this.version, mtbDiagnosisTypeCoding.version);
   }
 
   @Override
@@ -184,7 +155,7 @@ public class MtbDiagnosisTypeCoding {
     return o == null ? "null" : o.toString().replace("\n", "\n    ");
   }
 
-    public static class Builder {
+  public static class Builder {
 
     private MtbDiagnosisTypeCoding instance;
 
@@ -200,19 +171,21 @@ public class MtbDiagnosisTypeCoding {
       this.instance.code = code;
       return this;
     }
+
     public MtbDiagnosisTypeCoding.Builder display(String display) {
       this.instance.display = display;
       return this;
     }
+
     public MtbDiagnosisTypeCoding.Builder system(String system) {
       this.instance.system = system;
       return this;
     }
+
     public MtbDiagnosisTypeCoding.Builder version(String version) {
       this.instance.version = version;
       return this;
     }
-
 
     public MtbDiagnosisTypeCoding build() {
       try {
@@ -235,11 +208,9 @@ public class MtbDiagnosisTypeCoding {
 
   public MtbDiagnosisTypeCoding.Builder toBuilder() {
     return new MtbDiagnosisTypeCoding.Builder()
-      .code(getCode())
-      .display(getDisplay())
-      .system(getSystem())
-      .version(getVersion());
+        .code(getCode())
+        .display(getDisplay())
+        .system(getSystem())
+        .version(getVersion());
   }
-
 }
-
