@@ -8,7 +8,7 @@ import org.jspecify.annotations.Nullable;
 
 public class MsiMethodCoding {
   public enum CodeEnum {
-    IHC(String.valueOf("Ihc")),
+    IHC(String.valueOf("IHC")),
 
     PCR(String.valueOf("PCR")),
 
