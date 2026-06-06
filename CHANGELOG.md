@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.4.3](https://github.com/pcvolkmer/mv64e-mtb-model-java/compare/v0.4.2...v0.4.3) (2026-06-06)
+
+
+### Bug Fixes
+
+* use upper case IHC code enum value ([8386696](https://github.com/pcvolkmer/mv64e-mtb-model-java/commit/83866965290f61c5d2c87f1dfd472d7f474f4341))
+
 ## [0.4.2](https://github.com/pcvolkmer/mv64e-mtb-model-java/compare/v0.4.1...v0.4.2) (2026-06-02)
 
 
